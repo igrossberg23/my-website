@@ -1,0 +1,18 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: sans-serif;
+  font-size: 62.5%;
+  /* background-color: black; */
+  /* color: white; */
+}
+
+.hero--image {
+  background-image: url("img/broken-top1.jpg");
+  background-size: contain;
+  height: 100vh;
+}
