@@ -1,3 +1,12 @@
+:root {
+  --background-color: #202020;
+  --primary-color: #00ffff;
+  --secondary-color: #ff00ff;
+
+  --primary-color-op50: #00ffff80;
+  --secondary-color-op50: #ff00ff80;
+}
+
 * {
   margin: 0;
   padding: 0;
@@ -7,12 +16,284 @@
 body {
   font-family: sans-serif;
   font-size: 62.5%;
-  /* background-color: black; */
-  /* color: white; */
+  background-color: var(--background-color);
+  color: #e9e9e9;
+}
+
+/*************************************/
+/* General Components                */
+/*************************************/
+
+.card {
+  border-radius: 12px;
+  box-shadow: 0 2px 8x rgba(0, 0, 0, 0.25);
+}
+
+/*************************************/
+/* Hero Section                      */
+/*************************************/
+
+.section--hero {
+  padding-top: 2rem;
+  display: flex;
+  gap: 2rem;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 4.8rem;
 }
 
 .hero--image {
-  background-image: url("img/broken-top1.jpg");
   background-size: contain;
-  height: 100vh;
+}
+
+.hero--text {
+  color: var(--primary-color);
+  font-size: 2.4rem;
+  margin-bottom: 0.5rem;
+}
+
+.hero--subtext {
+  color: var(--secondary-color);
+  font-size: 1.8rem;
+}
+
+.hero--portrait {
+  background-image: url("./img/portrait.jpg");
+  background-size: 1400px;
+  background-position: -770px -140px;
+  content: "";
+  height: 200px;
+  width: 200px;
+  border-radius: 50%;
+  border: 5px solid var(--primary-color);
+}
+
+.hero--portrait::before {
+  content: "";
+  position: relative;
+  top: -4px;
+  left: -4px;
+  display: block;
+  height: 205px;
+  width: 205px;
+  border-radius: 50%;
+  background-color: var(--secondary-color);
+  z-index: -1;
+}
+
+/*************************************/
+/* About Me Section                  */
+/*************************************/
+
+.section--about {
+  padding: 1.2rem 2.4rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  border: 1px solid white;
+  width: 50vw;
+  margin: 0 auto;
+  margin-bottom: 4.8rem;
+}
+
+.about--title {
+  text-transform: uppercase;
+  font-size: 1.8rem;
+  color: var(--primary-color);
+  text-shadow: 2px 2px var(--secondary-color);
+  margin-bottom: 1rem;
+}
+
+.about--text {
+  font-size: 1.4rem;
+}
+
+/*************************************/
+/* Projects Section                  */
+/*************************************/
+
+.section--projects {
+  /* border: 1px solid white; */
+  border-radius: 12px;
+  padding: 0 1rem;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 1rem;
+  max-width: 80vw;
+  margin: 0 auto;
+  margin-bottom: 4.8rem;
+}
+
+.section--header {
+  text-transform: uppercase;
+  text-shadow: 2px 2px var(--secondary-color);
+  margin-bottom: 2.4rem;
+  color: var(--primary-color);
+  font-size: 3.2rem;
+  grid-column: span 4;
+  letter-spacing: 1px;
+}
+
+.project {
+  margin-bottom: 1rem;
+  position: relative;
+}
+
+.project--title {
+  display: flex;
+  align-items: center;
+  margin-bottom: 0.2rem;
+}
+
+.project--name {
+  text-transform: uppercase;
+  font-weight: bold;
+  margin-right: 1.2rem;
+  font-size: 1.6rem;
+  letter-spacing: 0.5px;
+}
+
+.project--subname {
+  font-size: 1rem;
+  letter-spacing: 1px;
+}
+
+.project--card-container {
+  display: flex;
+  position: relative;
+}
+
+.project--card {
+  display: inline-block;
+  width: auto;
+  overflow: hidden;
+  margin-bottom: 1rem;
+  /* border: 1px solid var(--secondary-color); */
+}
+
+.project--card-img {
+  width: 400px;
+  height: 250px;
+}
+
+.project--desc-container {
+  /* background-image: radial-gradient(white, rgba(255, 255, 255, 0.644)); */
+  background-color: rgba(255, 255, 255, 0.89);
+  position: absolute;
+  left: 150px;
+  border-radius: 12px;
+  width: 250px;
+  height: 250px;
+  padding-left: 1.6rem;
+  display: flex;
+  align-items: center;
+  opacity: 0;
+  transition: opacity 0.5s;
+}
+
+.project--card:hover + .project--desc-container {
+  opacity: 100;
+}
+
+.project--desc {
+  list-style: circle;
+  display: block;
+  font-size: 1rem;
+  margin-left: 1.5rem;
+}
+
+.project--desc li {
+  margin-bottom: 0.2rem;
+  color: black;
+}
+
+.project--desc li a {
+  text-decoration: none;
+  color: var(--secondary-color);
+}
+
+.project--desc li a:hover,
+.project--desc li a:link {
+  color: var(--primary-color);
+  text-decoration: underline;
+}
+
+/*************************************/
+/* Projects Section                  */
+/*************************************/
+
+.section--contact {
+  max-width: 80vw;
+  margin: 0 auto;
+  padding: 0 1rem;
+  margin-bottom: 4.8rem;
+}
+
+.contact--form {
+  border: 1px solid white;
+  border-radius: 12px;
+  width: 50%;
+  margin: 0 auto;
+  padding: 2.4rem 4.8rem;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1rem;
+  font-size: 1.2rem;
+  box-shadow: 1px 1px 10px 10px var(--primary-color);
+}
+
+.contact--title {
+  margin: 0 auto;
+  display: inline-block;
+  font-size: 2.4rem;
+  grid-column: span 2;
+  color: var(--primary-color);
+  /* text-shadow: 1px 1px var(--secondary-color); */
+}
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+}
+
+.form-group input {
+  font-size: inherit;
+  border-radius: 5px;
+  padding-left: 5px;
+  color: var(--background-color);
+}
+
+.contact--form textarea {
+  color: var(--background-color);
+  font-family: inherit;
+  font-size: inherit;
+  grid-column: span 2;
+  height: 250px;
+}
+
+.contact--button {
+  grid-column: span 2;
+  width: 20%;
+  margin: 0 auto;
+  padding: 0.8rem 1.6rem;
+  font-size: 1.6rem;
+  border-radius: 5px;
+  border: none;
+  background-color: var(--primary-color);
+  cursor: pointer;
+}
+
+/*************************************/
+/* Footer Section                    */
+/*************************************/
+
+.section--footer {
+  width: 90vw;
+  border-top: 1px solid #303030;
+  margin: 0 auto;
+  padding: 2rem 4rem;
+}
+
+.footer--links {
+  list-style: none;
 }
