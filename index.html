@@ -7,6 +7,7 @@
 
     <link rel="stylesheet" type="text/css" href="style.css" />
     <script defer src="script.js"></script>
+    <script src="https://www.google.com/recaptcha/api.js" async defer></script>
 
     <!-- Ion Icons-->
     <script
@@ -266,7 +267,13 @@
     </section>
     <section class="section--contact">
       <h2 class="section--header">Contact Me</h2>
-      <form class="contact--form" name="feedback" netlify>
+      <form
+        class="contact--form"
+        name="feedback"
+        method="POST"
+        data-netlify-recaptcha="true"
+        netlify
+      >
         <h3 class="contact--title">Let me know what you think!</h3>
         <div class="form-group">
           <label for="name">Name</label>
@@ -280,6 +287,10 @@
           name="message-body"
           placeholder="Your message here"
         ></textarea>
+        <div
+          class="g-recaptcha"
+          data-sitekey="6LcCCOMeAAAAAI3q-Vb5e8WMs5ZHFt7bfjYeLfzh"
+        ></div>
         <button type="submit" class="contact--button">Send!</button>
       </form>
     </section>
