@@ -7,6 +7,17 @@
 
     <link rel="stylesheet" type="text/css" href="style.css" />
     <script defer src="script.js"></script>
+
+    <!-- Ion Icons-->
+    <script
+      type="module"
+      src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"
+    ></script>
+    <script
+      nomodule
+      src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"
+    ></script>
+
     <title>Isaac Grossberg &mdash; Junior Web Developer</title>
   </head>
   <body>
@@ -35,13 +46,24 @@
         leaving an electrical engineering position in the construction industry,
         I have been independently learning HTML, CSS, JS, and React.js.
       </p>
+      <div class="about--links">
+        <a href="https://github.com/igrossberg23" target="_blank"
+          ><ion-icon name="logo-github"></ion-icon> My Github!</a
+        >
+        <a href="https://www.linkedin.com/in/isaac-grossberg/" target="_blank"
+          ><ion-icon name="logo-linkedin"></ion-icon> My LinkedIn!</a
+        >
+        <a href="#"><ion-icon name="document-outline"></ion-icon> My Resume!</a>
+      </div>
     </section>
     <section class="section--projects">
       <h2 class="section--header">Projects</h2>
 
       <div class="project">
         <div class="project--title">
-          <div class="project--name">Forkify</div>
+          <div class="project--name">
+            <ion-icon name="logo-javascript"></ion-icon>Forkify
+          </div>
           <div class="project--subname">Recipe Discovery</div>
         </div>
         <div class="project--card-container">
@@ -69,7 +91,9 @@
 
       <div class="project">
         <div class="project--title">
-          <div class="project--name">Mapty</div>
+          <div class="project--name">
+            <ion-icon name="logo-javascript"></ion-icon>Mapty
+          </div>
           <div class="project--subname">Workout Tracking</div>
         </div>
         <div class="project--card-container">
@@ -97,8 +121,10 @@
 
       <div class="project">
         <div class="project--title">
-          <div class="project--name">Omnifood</div>
-          <div class="project--subname">Subscription Business Page</div>
+          <div class="project--name">
+            <ion-icon name="logo-css3"></ion-icon>Omnifood
+          </div>
+          <div class="project--subname">Food Subscription</div>
         </div>
         <div class="project--card-container">
           <a
@@ -125,7 +151,9 @@
 
       <div class="project">
         <div class="project--title">
-          <div class="project--name">Bankist</div>
+          <div class="project--name">
+            <ion-icon name="logo-javascript"></ion-icon>Bankist
+          </div>
           <div class="project--subname">Minimalist Banking Page</div>
         </div>
         <div class="project--card-container">
@@ -151,7 +179,9 @@
 
       <div class="project">
         <div class="project--title">
-          <div class="project--name">Pig Game</div>
+          <div class="project--name">
+            <ion-icon name="logo-javascript"></ion-icon>Pig Game
+          </div>
           <div class="project--subname">2-player Dice Game</div>
         </div>
         <div class="project--card-container">
@@ -178,7 +208,9 @@
 
       <div class="project">
         <div class="project--title">
-          <div class="project--name">Guess Game</div>
+          <div class="project--name">
+            <ion-icon name="logo-javascript"></ion-icon>Guess Game
+          </div>
           <div class="project--subname">1-Player Game</div>
         </div>
         <div class="project--card-container">
@@ -205,7 +237,9 @@
 
       <div class="project">
         <div class="project--title">
-          <div class="project--name">Chair Shop</div>
+          <div class="project--name">
+            <ion-icon name="logo-css3"></ion-icon>Chair Shop
+          </div>
           <div class="project--subname">Product Page</div>
         </div>
         <div class="project--card-container">
@@ -232,7 +266,7 @@
     </section>
     <section class="section--contact">
       <h2 class="section--header">Contact Me</h2>
-      <form class="contact--form" target="mailto:igrossberg23@gmail.com">
+      <form class="contact--form" name="feedback" netlify>
         <h3 class="contact--title">Let me know what you think!</h3>
         <div class="form-group">
           <label for="name">Name</label>
@@ -242,15 +276,19 @@
           <label for="email">E-mail</label>
           <input type="email" name="email" />
         </div>
-        <textarea placeholder="Your message here"></textarea>
+        <textarea
+          name="message-body"
+          placeholder="Your message here"
+        ></textarea>
         <button type="submit" class="contact--button">Send!</button>
       </form>
     </section>
     <section class="section--footer">
-      <div class="footer--copyright">
-        Website entirely built by Isaac Grossberg.
-      </div>
-      <p class="version-notes">This is version 1.0 of this website.</p>
+      <div class="footer--copyright"></div>
+      <p class="version-notes">
+        Website entirely built by Isaac Grossberg. This is version 1.0 of this
+        website.
+      </p>
       <ul class="footer--links">
         <li class="footer--link"></li>
         <li class="footer--link"></li>

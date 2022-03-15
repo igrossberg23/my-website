@@ -106,6 +106,32 @@ body {
 
 .about--text {
   font-size: 1.4rem;
+  margin-bottom: 1.4rem;
+}
+
+.about--links {
+  font-size: 1.4rem;
+  list-style: none;
+  display: flex;
+  justify-content: center;
+  gap: 2.4rem;
+  align-items: center;
+}
+
+.about--links a:link,
+.about--links a:visited {
+  text-decoration: none;
+  color: var(--primary-color);
+}
+
+.about--links a:hover,
+.about--links a:active {
+  text-decoration: none;
+  color: var(--secondary-color);
+}
+
+.about--links ion-icon {
+  font-size: 3.2rem;
 }
 
 /*************************************/
@@ -151,6 +177,12 @@ body {
   margin-right: 1.2rem;
   font-size: 1.6rem;
   letter-spacing: 0.5px;
+}
+
+.project--name ion-icon {
+  font-size: 1.2rem;
+  color: var(--primary-color);
+  margin-right: 0.3rem;
 }
 
 .project--subname {
