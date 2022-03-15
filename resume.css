@@ -1,0 +1,72 @@
+:root {
+  --background-color: #202020;
+  --background-color-light: #303030;
+  --primary-color: #00ffff;
+  --secondary-color: #ff00ff;
+
+  --primary-color-op50: #00ffff80;
+  --secondary-color-op50: #ff00ff80;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: consolas, sans-serif;
+  font-size: 62.5%;
+  background-color: var(--background-color);
+  color: #e9e9e9;
+}
+
+.container {
+  width: 60%;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  /* justify-content: center; */
+  /* align-items: center; */
+  padding: 4.8rem;
+}
+
+.main-header {
+  font-size: 3.2rem;
+  margin-bottom: 2rem;
+  color: var(--primary-color);
+  text-shadow: 2px 2px var(--secondary-color);
+}
+
+.resume-view {
+  justify-self: center;
+  align-self: center;
+}
+
+.secondary-header {
+  font-size: 3.2rem;
+  color: var(--primary-color);
+  text-shadow: 2px 2px var(--secondary-color);
+  margin-bottom: 2rem;
+}
+
+.return-link {
+  font-size: 2.4rem;
+  align-self: center;
+  color: var(--background-color);
+  padding: 1.6rem 3.2rem;
+  border-radius: 12px;
+}
+
+.return-link:link,
+.return-link:visited {
+  text-decoration: none;
+  background-color: var(--primary-color);
+}
+
+.return-link:hover,
+.return-link:active {
+  background-color: var(--secondary-color);
+  box-shadow: 0 5px 2px 5px var(--background-color-light);
+  transform: translateY(-5%);
+}
