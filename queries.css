@@ -163,10 +163,44 @@
   .section--about {
     width: 90vw;
   }
+
+  .contact--form textarea {
+    width: 90%;
+  }
 }
 
 /***************************************/
 /* BELOW 544px (Phones) */
 /***************************************/
 @media (max-width: 34em) {
+  .contact--button {
+    /* padding: 0.4rem 0.8rem; */
+    width: 40%;
+  }
+
+  .section--footer {
+    gap: 0.8rem;
+    align-items: space-between;
+    justify-content: space-between;
+  }
+
+  .project--desc-container {
+    height: 200px;
+    width: 200px;
+    left: 120px;
+  }
+
+  .project--desc {
+    margin-left: 0.8rem;
+  }
+}
+
+/***************************************/
+/* BELOW 432px (Small phones) */
+/***************************************/
+@media (max-width: 34em) {
+  .project--card-img {
+    width: 320px;
+    height: 200px;
+  }
 }
