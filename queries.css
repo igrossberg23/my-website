@@ -1,0 +1,172 @@
+/* rem and em do NOT depend on html font size in media queries!
+   Instead 1rem = 1em = 16px */
+
+/***************************************/
+/* BELOW 1952px (Desktops) */
+/***************************************/
+@media (max-width: 122em) {
+  .section--projects {
+    /* background-color: red; */
+    grid-template-columns: 1fr 1fr 1fr;
+  }
+}
+
+/***************************************/
+/* BELOW 1728px (Desktops) */
+/***************************************/
+@media (max-width: 108em) {
+  .contact--form {
+    max-width: 70%;
+  }
+}
+
+/***************************************/
+/* BELOW 1568px (Smaller desktops) */
+/***************************************/
+@media (max-width: 98em) {
+  .section--projects {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+/***************************************/
+/* BELOW 1344px (Smaller desktops) */
+/***************************************/
+@media (max-width: 84em) {
+}
+
+/***************************************/
+/* BELOW 1200px (Landscape tablets) */
+/***************************************/
+@media (max-width: 75em) {
+  .section--about {
+    width: 70vw;
+  }
+  .contact--form {
+    max-width: 80%;
+  }
+}
+
+/***************************************/
+/* BELOW 1024px (Portrait Tablets) */
+/***************************************/
+@media (max-width: 64em) {
+  .contact--form {
+    max-width: none;
+  }
+}
+
+/***************************************/
+/* BELOW 944px (Portrait Tablets) */
+/***************************************/
+@media (max-width: 59em) {
+  .about--title {
+    align-self: center;
+  }
+
+  .section--projects {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .section--contact {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    max-width: none;
+  }
+}
+
+/***************************************/
+/* BELOW 832px (Smaller tablets) */
+/***************************************/
+@media (max-width: 52em) {
+  .section--contact {
+    /* max-width: none; */
+  }
+
+  .contact--form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 1.2rem 2.4rem;
+  }
+
+  .contact--form textarea {
+    width: 450px;
+  }
+
+  .contact--button {
+    font-size: 1.2rem;
+    max-width: none;
+  }
+}
+
+/***************************************/
+/* BELOW 704px (Smaller tablets) */
+/***************************************/
+@media (max-width: 44em) {
+  .section--hero {
+    flex-direction: column;
+  }
+
+  .hero--title {
+    text-align: center;
+  }
+
+  .section--about {
+    border: none;
+    max-width: none;
+  }
+
+  .about--title {
+    font-size: 3.2rem;
+    margin-bottom: 2rem;
+  }
+
+  .about--links {
+    flex-direction: column;
+  }
+
+  .about--text {
+    text-align: center;
+    margin-bottom: 4.8rem;
+  }
+
+  .projects-disclaimer {
+    max-width: 70vw;
+  }
+
+  .contact--form {
+    border: none;
+  }
+
+  .contact--title {
+    text-align: center;
+  }
+
+  .form-group {
+    align-items: center;
+  }
+
+  .form-group input {
+    text-align: center;
+  }
+}
+
+/***************************************/
+/* BELOW 624px (Phones) */
+/***************************************/
+@media (max-width: 39em) {
+  .section--about {
+    width: 90vw;
+  }
+}
+
+/***************************************/
+/* BELOW 544px (Phones) */
+/***************************************/
+@media (max-width: 34em) {
+}
