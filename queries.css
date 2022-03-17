@@ -172,8 +172,13 @@
 /* BELOW 544px (Phones) */
 /***************************************/
 @media (max-width: 34em) {
+  .section--about {
+    width: 100%;
+    padding: 0.6rem 1.2rem;
+  }
+
   .contact--button {
-    /* padding: 0.4rem 0.8rem; */
+    padding: 0.4rem 0.8rem;
     width: 40%;
   }
 
@@ -195,11 +200,25 @@
 }
 
 /***************************************/
+/* BELOW 464px (Small phones) */
+/***************************************/
+@media (max-width: 29em) {
+  .page-container {
+    max-width: none;
+  }
+}
+
+/***************************************/
 /* BELOW 432px (Small phones) */
 /***************************************/
-@media (max-width: 34em) {
+@media (max-width: 27em) {
   .project--card-img {
     width: 320px;
     height: 200px;
+  }
+
+  .section--footer {
+    max-width: none;
+    padding: 0.5rem 1rem;
   }
 }
