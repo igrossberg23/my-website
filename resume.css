@@ -31,23 +31,31 @@ body {
   padding: 4.8rem;
 }
 
-.main-header {
+.header-text {
   font-size: 3.2rem;
-  margin-bottom: 2rem;
   color: var(--primary-color);
   text-shadow: 2px 2px var(--secondary-color);
+}
+
+.header-secondary {
+  margin-bottom: 1rem;
+}
+
+.frame-container {
+  position: relative;
+  overflow: hidden;
+  width: 100%;
+  padding-top: 100%;
 }
 
 .resume-view {
-  justify-self: center;
-  align-self: center;
-}
-
-.secondary-header {
-  font-size: 3.2rem;
-  color: var(--primary-color);
-  text-shadow: 2px 2px var(--secondary-color);
-  margin-bottom: 2rem;
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  width: 100%;
+  height: 100%;
 }
 
 .return-link {
@@ -69,4 +77,68 @@ body {
   background-color: var(--secondary-color);
   box-shadow: 0 5px 2px 5px var(--background-color-light);
   transform: translateY(-5%);
+}
+
+/********** MEDIA QUERIES **************/
+
+/***************************************/
+/* BELOW 1664px (Desktops) */
+/***************************************/
+@media (max-width: 104em) {
+  .container {
+    width: 70%;
+  }
+}
+
+/***************************************/
+/* BELOW 1424px (Smaller Desktops) */
+/***************************************/
+@media (max-width: 89em) {
+  .container {
+    width: 80%;
+  }
+}
+
+/***************************************/
+/* BELOW 1248px (Smaller Desktops) */
+/***************************************/
+@media (max-width: 78em) {
+  .container {
+    width: 90%;
+  }
+
+  .return-link {
+    font-size: 2rem;
+  }
+}
+
+/***************************************/
+/* BELOW 624px (Portrait Tablets) */
+/***************************************/
+@media (max-width: 39em) {
+  .container {
+    padding: 2.4rem;
+  }
+
+  .return-link {
+    font-size: 1.4rem;
+    padding: 0.8rem 1.6rem;
+  }
+
+  .header-text {
+    font-size: 2.4rem;
+  }
+}
+
+/***************************************/
+/* BELOW 448px (Small Phones) */
+/***************************************/
+@media (max-width: 28em) {
+  .container {
+    padding: 1.2rem;
+  }
+
+  .return-link {
+    font-size: 1rem;
+  }
 }

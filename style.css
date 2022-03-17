@@ -5,6 +5,9 @@
 
   --primary-color-op50: #00ffff80;
   --secondary-color-op50: #ff00ff80;
+
+  --primary-color-dark: #004c4c;
+  --secondary-color-dark: #4c004c;
 }
 
 * {
@@ -180,6 +183,7 @@ body {
   align-items: center;
   justify-content: space-between;
   margin-bottom: 0.2rem;
+  width: 400px;
 }
 
 .project--name {
@@ -329,18 +333,19 @@ body {
 
 .contact--button {
   grid-column: 1 / -1;
-  width: 20%;
   margin: 0 auto;
   padding: 0.8rem 1.6rem;
   font-size: 1.6rem;
   border-radius: 5px;
   border: none;
   background-color: var(--primary-color);
+  color: var(--primary-color-dark);
   cursor: pointer;
 }
 
 .contact--button:hover {
   background-color: var(--secondary-color);
+  color: var(--secondary-color-dark);
 }
 
 .g-recaptcha {
