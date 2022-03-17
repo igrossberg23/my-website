@@ -142,3 +142,12 @@ body {
     font-size: 1rem;
   }
 }
+
+/***************************************/
+/* BELOW 368px (Small Phones) */
+/***************************************/
+@media (max-width: 23em) {
+  .header-text {
+    font-size: 2rem;
+  }
+}
