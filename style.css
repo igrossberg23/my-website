@@ -33,6 +33,10 @@ body {
   box-shadow: 0 2px 8x rgba(0, 0, 0, 0.25);
 }
 
+.page-container {
+  max-width: 90vw;
+}
+
 /*************************************/
 /* Hero Section                      */
 /*************************************/
@@ -149,7 +153,7 @@ body {
   /* border-radius: 12px; */
   padding: 1rem;
   display: grid;
-  grid-template-columns: repeat(4, 1fr);
+  grid-template-columns: repeat(3, 1fr);
   gap: 1rem;
   max-width: 80vw;
   margin: 0 auto;
@@ -269,7 +273,7 @@ body {
 /*************************************/
 
 .section--contact {
-  max-width: 80vw;
+  min-width: 80vw;
   margin: 0 auto;
   padding: 0 1rem;
   margin-bottom: 4.8rem;
@@ -339,7 +343,7 @@ body {
 }
 
 .g-recaptcha {
-  grid-column: span 2;
+  grid-column: 1 / -1;
   margin: 0 auto;
 }
 
@@ -355,7 +359,13 @@ body {
   display: flex;
   align-items: center;
   justify-content: center;
-  gap: 2.4rem;
+  gap: 4.8rem;
+}
+
+.footer--links {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
 }
 
 .footer--link {
@@ -378,7 +388,6 @@ body {
   margin-left: 1rem;
   display: inline-block;
   /* border: 1px solid white; */
-  align-self: center;
 }
 
 .copyright {
