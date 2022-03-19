@@ -1,5 +1,5 @@
 :root {
-  --background-color: #202020;
+  --background-color: #232b2b;
   --primary-color: #00ffff;
   --secondary-color: #ff00ff;
 
@@ -48,9 +48,31 @@ body {
   padding-top: 2rem;
   display: flex;
   gap: 2rem;
-  justify-content: center;
+  justify-content: flex-end;
   align-items: center;
   margin-bottom: 4.8rem;
+}
+
+/* .hero-background {
+  background-image: url("./img/hawaiian-sunset.jpg");
+  background-size: 1500px;
+  height: 250px;
+  width: 1100px;
+  background-position: 0 -80px;
+  border-radius: 12px;
+  content: "";
+  display: flex;
+  justify-content: flex-end;
+} */
+
+.hero--title {
+  align-self: center;
+}
+
+.hero--right {
+  display: flex;
+  align-items: center;
+  gap: 2rem;
 }
 
 .hero--text {
@@ -66,8 +88,8 @@ body {
 
 .hero--portrait {
   background-image: url("./img/portrait.jpg");
-  background-size: 1400px;
-  background-position: -770px -140px;
+  background-size: 1100px;
+  background-position: -590px -100px;
   content: "";
   height: 200px;
   width: 200px;
