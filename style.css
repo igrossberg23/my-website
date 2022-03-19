@@ -48,7 +48,7 @@ body {
   padding-top: 2rem;
   display: flex;
   gap: 2rem;
-  justify-content: flex-end;
+  justify-content: space-between;
   align-items: center;
   margin-bottom: 4.8rem;
 }
@@ -64,6 +64,11 @@ body {
   display: flex;
   justify-content: flex-end;
 } */
+
+.hero--left {
+  display: flex;
+  gap: 2rem;
+}
 
 .hero--title {
   align-self: center;
@@ -145,6 +150,7 @@ body {
   justify-content: center;
   gap: 2.4rem;
   align-items: center;
+  /* justify-self: flex-start; */
 }
 
 .about--links a:link,
