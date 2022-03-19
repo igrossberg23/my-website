@@ -70,25 +70,10 @@ body {
   gap: 2rem;
 }
 
-.hero--title {
-  align-self: center;
-}
-
 .hero--right {
   display: flex;
   align-items: center;
   gap: 2rem;
-}
-
-.hero--text {
-  color: var(--primary-color);
-  font-size: 2.4rem;
-  margin-bottom: 0.5rem;
-}
-
-.hero--subtext {
-  color: var(--secondary-color);
-  font-size: 1.8rem;
 }
 
 .hero--portrait {
@@ -115,32 +100,27 @@ body {
   z-index: -1;
 }
 
-/*************************************/
-/* About Me Section                  */
-/*************************************/
-
-.section--about {
-  padding: 1.2rem 2.4rem;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  border: 1px solid white;
-  width: 50vw;
-  margin: 0 auto;
-  margin-bottom: 4.8rem;
+.hero--title {
+  align-self: center;
 }
 
-.about--title {
-  text-transform: uppercase;
-  font-size: 2rem;
+.hero--text {
   color: var(--primary-color);
-  text-shadow: 2px 2px var(--secondary-color);
-  margin-bottom: 1rem;
+  font-size: 2.4rem;
+  margin-bottom: 0.5rem;
 }
 
-.about--text {
-  font-size: 1.4rem;
-  margin-bottom: 1.4rem;
+.hero--subtext {
+  color: var(--secondary-color);
+  font-size: 1.8rem;
+}
+
+.icon-description {
+  display: none;
+}
+
+.about--link:hover .icon-description {
+  display: inline-block;
 }
 
 .about--links {
@@ -173,6 +153,34 @@ body {
   display: flex;
   align-items: center;
   gap: 0.3rem;
+}
+
+/*************************************/
+/* About Me Section                  */
+/*************************************/
+
+.section--about {
+  padding: 1.2rem 2.4rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  border: 1px solid white;
+  width: 50vw;
+  margin: 0 auto;
+  margin-bottom: 4.8rem;
+}
+
+.about--title {
+  text-transform: uppercase;
+  font-size: 2rem;
+  color: var(--primary-color);
+  text-shadow: 2px 2px var(--secondary-color);
+  margin-bottom: 1rem;
+}
+
+.about--text {
+  font-size: 1.4rem;
+  margin-bottom: 1.4rem;
 }
 
 /*************************************/
