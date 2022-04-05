@@ -2,4 +2,4 @@
 
 This project was 100% created by me (Isaac Grossberg). This site acts as a store for all of my current projects while also housing relevant links such as my github, my LinkedIn, and my resume.
 
-You can visit this website [here](https://isaac-grossberg.netlify.app)
+You can visit this website [here](https://www.isaac-grossberg.com)
