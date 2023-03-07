@@ -10,9 +10,15 @@ const aboutCenterContainer = document.querySelector(".about--center-container");
 
 const ABOUT_ME = [
   {
+    icon: "home-outline",
+    title: "Graduated High School",
+    description: "Grew up in Eugene, OR. Graduated from Sheldon High School in 2016",
+    date: "Jun '16",
+  },
+  {
     icon: "settings-outline",
     title: "Controls Engineering Intern",
-    description: "Worked under a senior process engineer for a small engineering firm, aiding in schematic design and PLC programming",
+    description: "Worked under a senior engineer for a small engineering firm, aiding in schematic design and PLC programming",
     date: "Jun '16",
   },
   {
@@ -80,6 +86,30 @@ window.addEventListener("load", function () {
   });
 
   buildAboutMe();
+
+  const evenBoxes = this.document.querySelectorAll(".about--box:nth-child(even)");
+
+  const oddBoxes = this.document.querySelectorAll(".about--box:nth-child(odd)");
+
+  evenBoxes.forEach((box) => {
+    respondToVisibility(box, (visible) => {
+      if (visible) {
+        box.classList.add("no-translate");
+      } else {
+        box.classList.remove("no-translate");
+      }
+    });
+  });
+
+  oddBoxes.forEach((box) => {
+    respondToVisibility(box, (visible) => {
+      if (visible) {
+        box.classList.add("no-translate");
+      } else {
+        box.classList.remove("no-translate");
+      }
+    });
+  });
 });
 
 function buildAboutMe() {
@@ -134,5 +164,21 @@ function buildAboutMe() {
     aboutCenterContainer.appendChild(aboutTimelineText);
 
   });
+}
+
+// TODO: Fix this so it slides in on element visibility
+function respondToVisibility(element, callback) {
+  var options = {
+    root: document.documentElement,
+  };
+
+  var observer = new IntersectionObserver((entries, observer) => {
+    entries.forEach(entry => {
+      // callback if element is visible
+      callback(entry.isIntersecting);
+    });
+  }, options);
+
+  observer.observe(element);
 }
 

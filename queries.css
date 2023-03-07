@@ -184,6 +184,10 @@
     display: inline-block;
   }
 
+  .header-text {
+    text-align: center;
+  }
+
   .hero--title {
     text-align: center;
   }
@@ -223,8 +227,34 @@
 /* BELOW 624px (Phones) */
 /***************************************/
 @media (max-width: 39em) {
+
   .section--about {
     width: 90vw;
+  }
+
+  .about--box:nth-child(even) {
+    border-bottom-left-radius: 3rem;
+    border-top-left-radius: 3rem;
+    border-bottom-right-radius: 0;
+    border-top-right-radius: 0;
+  }
+
+  .header-block {
+    flex-direction: column;
+    width: 20rem;
+  }
+
+  .about--grid {
+    grid-template-columns: 1fr;
+    row-gap: 1rem;
+  }
+
+  .about--center-container {
+    display: none;
+  }
+
+  .mobile-date {
+    display: inline-block;
   }
 
   .contact--form textarea {
@@ -237,7 +267,7 @@
 /***************************************/
 @media (max-width: 34em) {
   :root {
-    --about-box-height: 175px;
+    --about-box-height: 160px;
   }
 
   .section--about {
@@ -270,24 +300,6 @@
 /* BELOW 464px (Small phones) */
 /***************************************/
 @media (max-width: 29em) {
-  .about--center-container {
-    display: none;
-  }
-
-  .header-block {
-    flex-direction: column;
-    width: 90vw;
-  }
-
-  .mobile-date {
-    display: inline-block;
-  }
-
-  .about--grid {
-    grid-template-columns: 1fr;
-    row-gap: 1rem;
-  }
-
   .page-container {
     max-width: none;
   }
@@ -297,6 +309,9 @@
 /* BELOW 432px (Small phones) */
 /***************************************/
 @media (max-width: 27em) {
+  .header-block {
+    width: 90vw;
+  }
   .project--card-img {
     width: 320px;
     height: 200px;
