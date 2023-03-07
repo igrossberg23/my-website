@@ -143,6 +143,10 @@
 /* BELOW 832px (Smaller tablets) */
 /***************************************/
 @media (max-width: 52em) {
+  .header-block {
+    padding: 0.6rem 1.2rem;
+  }
+
   .page-container {
     width: 100vw;
   }
@@ -192,10 +196,6 @@
   .section--about {
     border: none;
     max-width: none;
-  }
-
-  .about--links {
-    flex-direction: column;
   }
 
   .projects-disclaimer {
@@ -272,6 +272,11 @@
 @media (max-width: 29em) {
   .about--center-container {
     display: none;
+  }
+
+  .header-block {
+    flex-direction: column;
+    width: 90vw;
   }
 
   .mobile-date {
