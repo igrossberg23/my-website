@@ -171,6 +171,11 @@
     flex-direction: column;
   }
 
+  .section--header {
+    margin-top: 0;
+    margin-bottom: 2rem;
+  }
+
   .icon-description {
     display: inline-block;
   }
@@ -189,17 +194,8 @@
     max-width: none;
   }
 
-  .about--title {
-    font-size: 3.2rem;
-    margin-bottom: 2rem;
-  }
-
   .about--links {
     flex-direction: column;
-  }
-
-  .about--text {
-    /* text-align: center; */
   }
 
   .projects-disclaimer {

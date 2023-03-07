@@ -67,7 +67,7 @@ body {
   content: "";
   display: block;
   width: 60%;
-  height: 5%;
+  height: 6px;
   margin: 0 auto;
   background-color: var(--primary-color);
   box-shadow: 0 0 10px var(--primary-color-light);
@@ -79,7 +79,7 @@ body {
   content: "";
   display: block;
   width: 40%;
-  height: 5%;
+  height: 6px;
   margin: 0 auto;
   background-color: var(--secondary-color);
   box-shadow: 0 0 10px var(--secondary-color-light);
@@ -114,6 +114,7 @@ body {
 
 .hero--left {
   display: flex;
+  justify-items: center;
   gap: 2rem;
 }
 
