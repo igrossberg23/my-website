@@ -55,7 +55,7 @@ body {
   text-transform: uppercase;
   text-shadow: 2px 2px var(--secondary-color);
   color: var(--primary-color);
-  font-size: 4.8rem;
+  font-size: clamp(3.2rem, 5vw, 4.8rem);
   margin-top: 3.2rem;
   margin-bottom: 6.2rem;
   grid-column: 1 / -1;
