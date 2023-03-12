@@ -17,8 +17,8 @@ const ABOUT_ME = [
   },
   {
     icon: "settings-outline",
-    title: "Controls Engineering Intern",
-    description: "Worked under a senior engineer for a small engineering firm, aiding in schematic design and PLC programming",
+    title: "Engineering Intern",
+    description: "Worked under a senior engineer, aiding in schematic design and PLC programming",
     date: "Jun '16",
   },
   {
