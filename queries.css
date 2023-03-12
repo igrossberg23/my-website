@@ -11,9 +11,6 @@
 /* BELOW 1728px (Desktops) */
 /***************************************/
 @media (max-width: 108em) {
-  .contact--form {
-    max-width: 70%;
-  }
 }
 
 /***************************************/
@@ -49,9 +46,6 @@
   .section--about {
     width: 90vw;
   }
-  .contact--form {
-    max-width: 80%;
-  }
 }
 
 /***************************************/
@@ -60,9 +54,6 @@
 @media (max-width: 64em) {
   .page-container {
     width: 95vw;
-  }
-  .contact--form {
-    max-width: none;
   }
 }
 
@@ -131,12 +122,12 @@
     justify-content: center;
   }
 
-  .section--contact {
+  /* .section--contact {
     display: flex;
     flex-direction: column;
     align-items: center;
     max-width: none;
-  }
+  } */
 }
 
 /***************************************/
@@ -149,17 +140,6 @@
 
   .page-container {
     width: 100vw;
-  }
-
-  .contact--form {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    padding: 1.2rem 2.4rem;
-  }
-
-  .contact--form textarea {
-    width: 450px;
   }
 
   .contact--button {
@@ -206,21 +186,14 @@
     max-width: 70vw;
   }
 
-  .contact--form {
-    border: none;
+  .section--header::before {
+    width: 80vw;
   }
 
-  .contact--title {
-    text-align: center;
+  .section--header::after {
+    width: 60vw;
   }
 
-  .form-group {
-    align-items: center;
-  }
-
-  .form-group input {
-    text-align: center;
-  }
 }
 
 /***************************************/
@@ -257,9 +230,6 @@
     display: inline-block;
   }
 
-  .contact--form textarea {
-    width: 90%;
-  }
 }
 
 /***************************************/
@@ -294,12 +264,21 @@
   .project--desc {
     margin-left: 0.8rem;
   }
+
+  .contact--form button,
+  .g-recaptcha {
+    margin: 0 auto;
+  }
 }
 
 /***************************************/
 /* BELOW 464px (Small phones) */
 /***************************************/
 @media (max-width: 29em) {
+  .section--contact {
+    padding: 0;
+  }
+
   .page-container {
     max-width: none;
   }
@@ -324,5 +303,19 @@
   .section--footer {
     max-width: none;
     padding: 0.5rem 1rem;
+  }
+
+  .g-recaptcha {
+    transform: scale(0.8);
+  }
+}
+
+/***************************************/
+/* BELOW 384px (Small phones) */
+/***************************************/
+@media (max-width: 24em) {
+
+  .g-recaptcha {
+    margin: 0;
   }
 }

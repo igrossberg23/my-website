@@ -78,6 +78,7 @@ generateCopyright();
 
 // Window load
 window.addEventListener("load", function () {
+  // Adjust resume link for mobile view
   linkResume.addEventListener("click", function (e) {
     if (window.innerWidth < WINDOW_MIN_WIDTH) {
       e.preventDefault();
@@ -88,7 +89,6 @@ window.addEventListener("load", function () {
   buildAboutMe();
 
   const evenBoxes = this.document.querySelectorAll(".about--box:nth-child(even)");
-
   const oddBoxes = this.document.querySelectorAll(".about--box:nth-child(odd)");
 
   evenBoxes.forEach((box) => {
@@ -110,6 +110,7 @@ window.addEventListener("load", function () {
       }
     });
   });
+
 });
 
 function buildAboutMe() {
@@ -174,6 +175,7 @@ function respondToVisibility(element, callback) {
 
   var observer = new IntersectionObserver((entries, observer) => {
     entries.forEach(entry => {
+      console.log(entry);
       // callback if element is visible
       callback(entry.isIntersecting);
     });
