@@ -3,8 +3,6 @@
 const copyrightEl = document.querySelector(".copyright");
 const linkResume = document.querySelector(".resume--link");
 
-// const aboutRightContainer = document.querySelector(".about--right-container");
-// const aboutLeftContainer = document.querySelector(".about--left-container");
 const aboutGrid = document.getElementById("about-grid");
 const aboutCenterContainer = document.querySelector(".about--center-container");
 
@@ -82,7 +80,7 @@ window.addEventListener("load", function () {
   linkResume.addEventListener("click", function (e) {
     if (window.innerWidth < WINDOW_MIN_WIDTH) {
       e.preventDefault();
-      window.location.href = "./docs/Grossberg-resume-03-22.pdf";
+      window.location.href = "./docs/GrossbergResume_03-23.pdf";
     }
   });
 
