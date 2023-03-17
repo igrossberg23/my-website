@@ -106,7 +106,7 @@ window.addEventListener("load", function () {
 
 
   const contactCard = this.document.querySelector(".contact--card");
-  
+
   if (!touchDevice) {
     const contactObserver = new IntersectionObserver((entries, observer) => {
       entries.forEach(entry => {
@@ -118,6 +118,8 @@ window.addEventListener("load", function () {
       threshold: 0.8
     });
     contactObserver.observe(contactCard);
+  } else {
+    contactCard.style.opacity = "1";
   }
 
 
