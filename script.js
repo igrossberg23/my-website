@@ -5,8 +5,13 @@ const linkResume = document.querySelector(".resume--link");
 
 const aboutGrid = document.getElementById("about-grid");
 const aboutCenterContainer = document.querySelector(".about--center-container");
+const aboutBoxes = this.document.querySelectorAll(".about--box");
 
 const cursorBlob = document.getElementById('cursor-blob');
+
+const contactCard = this.document.querySelector(".contact--card");
+
+var touchDevice = ('ontouchstart' in window) || window.DocumentTouch && document instanceof DocumentTouch;
 
 const ABOUT_ME = [
   {
@@ -86,10 +91,15 @@ window.addEventListener("load", function () {
     }
   });
 
-  buildAboutMe();
+  buildAboutMe(); // Mostly for style points, considering making these static again though
 
-  var touchDevice = ('ontouchstart' in window) || window.DocumentTouch && document instanceof DocumentTouch;
+  setupCursorBlob();
+  setupContactCard();
+  setupAboutCards();
 
+});
+
+function setupCursorBlob() {
   if (!touchDevice) {
     this.document.body.onpointermove = (e) => {
       const { pageX, pageY } = e;
@@ -102,10 +112,9 @@ window.addEventListener("load", function () {
   } else {
     cursorBlob.style.display = "none";
   }
+}
 
-
-  const contactCard = this.document.querySelector(".contact--card");
-
+function setupContactCard() {
   if (!touchDevice) {
     const contactObserver = new IntersectionObserver((entries, observer) => {
       entries.forEach(entry => {
@@ -117,13 +126,16 @@ window.addEventListener("load", function () {
       threshold: 0.8
     });
     contactObserver.observe(contactCard);
+
+    return contactObserver;
   } else {
     contactCard.style.opacity = "1";
   }
 
+  return false;
+}
 
-  const aboutBoxes = this.document.querySelectorAll(".about--box");
-
+function setupAboutCards() {
   var aboutObserver = new IntersectionObserver((entries, observer) => {
     entries.forEach(entry => {
       entry.target.classList.toggle("show", entry.isIntersecting);
@@ -134,7 +146,8 @@ window.addEventListener("load", function () {
 
   aboutBoxes.forEach((box) => aboutObserver.observe(box));
 
-});
+  return aboutObserver;
+}
 
 function buildAboutMe() {
   // Build out each section
