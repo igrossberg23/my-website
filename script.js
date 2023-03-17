@@ -115,6 +115,14 @@ window.addEventListener("load", function () {
     threshold: 1
   });
 
+  console.log(this.window);
+
+  var touchDevice = ('ontouchstart' in window) || window.DocumentTouch && document instanceof DocumentTouch;
+  
+  if (touchDevice) {
+    this.document.querySelector('.hero--text').innerHTML = 'Touch Device Detected';
+  }
+
   contactObserver.observe(contactCard);
 
 
