@@ -6,6 +6,8 @@ const linkResume = document.querySelector(".resume--link");
 const aboutGrid = document.getElementById("about-grid");
 const aboutCenterContainer = document.querySelector(".about--center-container");
 
+const cursorBlob = document.getElementById('cursor-blob');
+
 const ABOUT_ME = [
   {
     icon: "home-outline",
@@ -89,25 +91,45 @@ window.addEventListener("load", function () {
   const evenBoxes = this.document.querySelectorAll(".about--box:nth-child(even)");
   const oddBoxes = this.document.querySelectorAll(".about--box:nth-child(odd)");
 
-  evenBoxes.forEach((box) => {
-    respondToVisibility(box, (visible) => {
-      if (visible) {
-        box.classList.add("no-translate");
+  this.document.body.onpointermove = (e) => {
+    const { pageX, pageY } = e;
+
+    cursorBlob.animate({
+      left: `${pageX}px`,
+      top: `${pageY}px`,
+    }, { duration: 1000, fill: "forwards"});
+  }
+
+  // rotate 3d the contact--card as it scrolls into view
+  const contactCard = this.document.querySelector(".contact--card");
+  const contactObserver = new IntersectionObserver((entries, observer) => {
+    entries.forEach(entry => {
+
+      if (entry.isIntersecting) {
+        contactCard.animate({transform: "rotate3d(1, 1, 1, 360deg)", opacity: "1"}, { duration: 1500, fill: "forwards" })
       } else {
-        box.classList.remove("no-translate");
       }
+
     });
+  }, {
+    threshold: 1
   });
 
-  oddBoxes.forEach((box) => {
-    respondToVisibility(box, (visible) => {
-      if (visible) {
-        box.classList.add("no-translate");
-      } else {
-        box.classList.remove("no-translate");
-      }
-    });
+  contactObserver.observe(contactCard);
+
+
+
+  const aboutBoxes = this.document.querySelectorAll(".about--box");
+
+  var aboutObserver = new IntersectionObserver((entries, observer) => {
+    entries.forEach(entry => {
+      entry.target.classList.toggle("show", entry.isIntersecting);
+    })
+  }, {
+    threshold: 0.7,
   });
+
+  aboutBoxes.forEach((box) => aboutObserver.observe(box));
 
 });
 
@@ -163,22 +185,5 @@ function buildAboutMe() {
     aboutCenterContainer.appendChild(aboutTimelineText);
 
   });
-}
-
-// TODO: Fix this so it slides in on element visibility
-function respondToVisibility(element, callback) {
-  var options = {
-    root: document.documentElement,
-  };
-
-  var observer = new IntersectionObserver((entries, observer) => {
-    entries.forEach(entry => {
-      console.log(entry);
-      // callback if element is visible
-      callback(entry.isIntersecting);
-    });
-  }, options);
-
-  observer.observe(element);
 }
 

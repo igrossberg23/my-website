@@ -15,7 +15,7 @@
 }
 
 body {
-  font-family: consolas, sans-serif;
+  font-family: "Fredoka", sans-serif;
   font-size: 62.5%;
   background-color: var(--background-color);
   color: #e9e9e9;
@@ -26,12 +26,11 @@ body {
   margin: 0 auto;
   display: flex;
   flex-direction: column;
-  /* justify-content: center; */
-  /* align-items: center; */
   padding: 4.8rem;
 }
 
 .header-text {
+  font-family: consolas, sans-serif;
   font-size: 3.2rem;
   color: var(--primary-color);
   text-shadow: 2px 2px var(--secondary-color);
@@ -61,7 +60,10 @@ body {
 .return-link {
   font-size: 2.4rem;
   align-self: center;
-  color: var(--background-color);
+  color: var(--primary-color);
+  border: 1px solid var(--primary-color);
+  box-shadow: 0 0 10px var(--primary-color);
+  background: none;
   padding: 1.6rem 3.2rem;
   border-radius: 12px;
 }
@@ -69,14 +71,13 @@ body {
 .return-link:link,
 .return-link:visited {
   text-decoration: none;
-  background-color: var(--primary-color);
 }
 
 .return-link:hover,
 .return-link:active {
-  background-color: var(--secondary-color);
-  box-shadow: 0 5px 2px 5px var(--background-color-light);
-  transform: translateY(-5%);
+  background-color: var(--primary-color-op50);
+  /* box-shadow: 0 5px 2px 5px var(--background-color-light); */
+  transform: scale(1.05);
 }
 
 /********** MEDIA QUERIES **************/
