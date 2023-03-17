@@ -5,7 +5,6 @@ const linkResume = document.querySelector(".resume--link");
 
 const aboutGrid = document.getElementById("about-grid");
 const aboutCenterContainer = document.querySelector(".about--center-container");
-const aboutBoxes = this.document.querySelectorAll(".about--box");
 
 const cursorBlob = document.getElementById('cursor-blob');
 
@@ -95,17 +94,7 @@ window.addEventListener("load", function () {
 
   setupCursorBlob();
   setupContactCard();
-  // setupAboutCards();
-
-  var aboutObserver = new IntersectionObserver((entries, observer) => {
-    entries.forEach(entry => {
-      entry.target.classList.toggle("show", entry.isIntersecting);
-    })
-  }, {
-    threshold: 0.7,
-  });
-
-  aboutBoxes.forEach((box) => aboutObserver.observe(box));
+  setupAboutCards();
 
 });
 
@@ -146,6 +135,8 @@ function setupContactCard() {
 }
 
 function setupAboutCards() {
+  const aboutBoxes = this.document.querySelectorAll(".about--box");
+
   var aboutObserver = new IntersectionObserver((entries, observer) => {
     entries.forEach(entry => {
       entry.target.classList.toggle("show", entry.isIntersecting);
