@@ -88,43 +88,37 @@ window.addEventListener("load", function () {
 
   buildAboutMe();
 
-  const evenBoxes = this.document.querySelectorAll(".about--box:nth-child(even)");
-  const oddBoxes = this.document.querySelectorAll(".about--box:nth-child(odd)");
+  var touchDevice = ('ontouchstart' in window) || window.DocumentTouch && document instanceof DocumentTouch;
 
   this.document.body.onpointermove = (e) => {
     const { pageX, pageY } = e;
 
-    cursorBlob.animate({
-      left: `${pageX}px`,
-      top: `${pageY}px`,
-    }, { duration: 1000, fill: "forwards"});
+    if (touchDevice) {
+      cursorBlob.style.left = `${pageX}px`;
+      cursorBlob.style.top = `${pageY}px`;
+    } else {
+      cursorBlob.animate({
+        left: `${pageX}px`,
+        top: `${pageY}px`,
+      }, { duration: 1000, fill: "forwards"});
+    }
   }
 
-  // rotate 3d the contact--card as it scrolls into view
+
   const contactCard = this.document.querySelector(".contact--card");
-  const contactObserver = new IntersectionObserver((entries, observer) => {
-    entries.forEach(entry => {
-
-      if (entry.isIntersecting) {
-        contactCard.animate({transform: "rotate3d(1, 1, 1, 360deg)", opacity: "1"}, { duration: 1500, fill: "forwards" })
-      } else {
-      }
-
-    });
-  }, {
-    threshold: 1
-  });
-
-  console.log(this.window);
-
-  var touchDevice = ('ontouchstart' in window) || window.DocumentTouch && document instanceof DocumentTouch;
   
-  if (touchDevice) {
-    this.document.querySelector('.hero--text').innerHTML = 'Touch Device Detected';
+  if (!touchDevice) {
+    const contactObserver = new IntersectionObserver((entries, observer) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          contactCard.animate({transform: "rotate3d(1, 1, 1, 360deg)", opacity: "1"}, { duration: 1500, fill: "forwards" })
+        }
+      });
+    }, {
+      threshold: 0.8
+    });
+    contactObserver.observe(contactCard);
   }
-
-  contactObserver.observe(contactCard);
-
 
 
   const aboutBoxes = this.document.querySelectorAll(".about--box");
