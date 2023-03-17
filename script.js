@@ -100,7 +100,7 @@ window.addEventListener("load", function () {
 
 function setupCursorBlob() {
   if (!touchDevice) {
-    this.document.body.onpointermove = (e) => {
+    document.body.onpointermove = (e) => {
       const { pageX, pageY } = e;
 
       cursorBlob.animate({
@@ -135,7 +135,7 @@ function setupContactCard() {
 }
 
 function setupAboutCards() {
-  const aboutBoxes = this.document.querySelectorAll(".about--box");
+  const aboutBoxes = document.querySelectorAll(".about--box");
 
   var aboutObserver = new IntersectionObserver((entries, observer) => {
     entries.forEach(entry => {
