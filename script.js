@@ -95,7 +95,17 @@ window.addEventListener("load", function () {
 
   setupCursorBlob();
   setupContactCard();
-  setupAboutCards();
+  // setupAboutCards();
+
+  var aboutObserver = new IntersectionObserver((entries, observer) => {
+    entries.forEach(entry => {
+      entry.target.classList.toggle("show", entry.isIntersecting);
+    })
+  }, {
+    threshold: 0.7,
+  });
+
+  aboutBoxes.forEach((box) => aboutObserver.observe(box));
 
 });
 
