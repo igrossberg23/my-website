@@ -90,18 +90,17 @@ window.addEventListener("load", function () {
 
   var touchDevice = ('ontouchstart' in window) || window.DocumentTouch && document instanceof DocumentTouch;
 
-  this.document.body.onpointermove = (e) => {
-    const { pageX, pageY } = e;
+  if (!touchDevice) {
+    this.document.body.onpointermove = (e) => {
+      const { pageX, pageY } = e;
 
-    if (touchDevice) {
-      cursorBlob.style.left = `${pageX}px`;
-      cursorBlob.style.top = `${pageY}px`;
-    } else {
       cursorBlob.animate({
         left: `${pageX}px`,
         top: `${pageY}px`,
       }, { duration: 1000, fill: "forwards"});
     }
+  } else {
+    cursorBlob.style.display = "none";
   }
 
 
