@@ -93,7 +93,7 @@ window.addEventListener("load", function () {
   buildAboutMe(); // Mostly for style points, considering making these static again though
 
   setupCursorBlob();
-  setupContactCard();
+//   setupContactCard();
   setupAboutCards();
 
 });
@@ -118,7 +118,7 @@ function setupContactCard() {
     const contactObserver = new IntersectionObserver((entries, observer) => {
       entries.forEach(entry => {
         if (entry.isIntersecting) {
-          contactCard.animate({transform: "rotate3d(1, 1, 1, 360deg)", opacity: "1"}, { duration: 1500, fill: "forwards" })
+          contactCard.animate({transform: "translateX(-100)", opacity: "1"}, { duration: 1500, fill: "forwards" })
         }
       });
     }, {

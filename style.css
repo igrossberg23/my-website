@@ -627,7 +627,6 @@ body::after {
   width: clamp(300px, 80vw, 800px);
   border-radius: 12px;
   box-shadow: 0 0 10px var(--primary-color);
-  opacity: 0;
 
   display: flex;
   flex-direction: column;
