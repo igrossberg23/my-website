@@ -55,19 +55,28 @@ function initNavigation() {
     link.addEventListener('click', (e) => {
       const href = link.getAttribute('href');
 
-      // Skip if it's an external link or resume link
-      if (href.startsWith('http') || href === 'resume.html') {
+      // Skip if it's an external link
+      if (href.startsWith('http')) {
         return;
       }
 
-      e.preventDefault();
-      const targetSection = document.querySelector(href);
-      if (targetSection) {
-        const offsetTop = targetSection.offsetTop - 70; // Account for fixed navbar
-        window.scrollTo({
-          top: offsetTop,
-          behavior: 'smooth',
-        });
+      // Handle cross-page navigation (links to index.html with hash)
+      if (href.includes('index.html#')) {
+        // Allow default behavior for cross-page navigation
+        return;
+      }
+
+      // Handle same-page navigation
+      if (href.startsWith('#')) {
+        e.preventDefault();
+        const targetSection = document.querySelector(href);
+        if (targetSection) {
+          const offsetTop = targetSection.offsetTop - 70; // Account for fixed navbar
+          window.scrollTo({
+            top: offsetTop,
+            behavior: 'smooth',
+          });
+        }
       }
     });
   });
@@ -247,6 +256,11 @@ function initTypingAnimation() {
 
 // ===== PARALLAX EFFECTS =====
 function initParallaxEffects() {
+  // Disable parallax on mobile devices
+  if (window.innerWidth <= 768) {
+    return;
+  }
+
   const parallaxElements = document.querySelectorAll(
     '.hero-image, .image-background'
   );
@@ -405,6 +419,17 @@ window.addEventListener(
       hamburger.classList.remove('active');
       navMenu.classList.remove('active');
     }
+  }, 250)
+);
+
+// Handle orientation changes on mobile
+window.addEventListener(
+  'orientationchange',
+  debounce(() => {
+    // Reinitialize parallax effects after orientation change
+    setTimeout(() => {
+      initParallaxEffects();
+    }, 100);
   }, 250)
 );
 

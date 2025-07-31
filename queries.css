@@ -120,11 +120,14 @@
   /* Hero Section */
   .hero {
     min-height: 90vh;
+    padding-top: 70px; /* Ensure navbar doesn't overlap */
   }
 
   .hero-content {
     min-height: 60vh;
     gap: var(--spacing-xl);
+    padding-top: var(--spacing-lg); /* Add extra spacing for mobile */
+    position: relative; /* Ensure proper stacking context */
   }
 
   .hero-cta {
@@ -168,6 +171,8 @@
   /* Timeline */
   .timeline {
     padding-left: var(--spacing-lg);
+    margin-left: var(--spacing-md); /* Add margin to prevent overflow */
+    overflow: visible; /* Ensure dates are visible */
   }
 
   .timeline::before {
@@ -177,6 +182,7 @@
   .timeline-item {
     padding-left: 50px;
     margin-bottom: var(--spacing-lg);
+    position: relative;
   }
 
   .timeline-marker {
@@ -189,6 +195,8 @@
     left: -70px;
     top: 0;
     font-size: var(--font-size-xs);
+    white-space: nowrap; /* Prevent text wrapping */
+    min-width: 60px; /* Ensure minimum width for dates */
   }
 
   /* Projects Section */
@@ -277,6 +285,7 @@
   .hero-title {
     font-size: var(--font-size-4xl);
     line-height: 1.1;
+    margin-top: var(--spacing-md); /* Add space from navbar */
   }
 
   .hero-cta {
@@ -294,11 +303,22 @@
   .image-container {
     width: 250px;
     height: 250px;
+    transform: none !important; /* Disable parallax on mobile */
+  }
+
+  .image-background {
+    transform: none !important; /* Disable parallax on mobile */
   }
 
   .image-background {
     top: 15px;
     left: 15px;
+  }
+
+  /* Fix scroll indicator positioning on mobile */
+  .hero-scroll {
+    bottom: var(--spacing-lg);
+    z-index: 1; /* Lower z-index to prevent overlap */
   }
 
   /* About Section */
@@ -335,6 +355,7 @@
   /* Timeline */
   .timeline {
     padding-left: var(--spacing-md);
+    margin-left: var(--spacing-lg); /* Increase margin for small screens */
   }
 
   .timeline::before {
@@ -344,6 +365,7 @@
   .timeline-item {
     padding-left: 40px;
     margin-bottom: var(--spacing-md);
+    position: relative;
   }
 
   .timeline-marker {
@@ -355,6 +377,8 @@
   .timeline-item::before {
     left: -60px;
     font-size: var(--font-size-xs);
+    white-space: nowrap; /* Prevent text wrapping */
+    min-width: 50px; /* Ensure minimum width for dates */
   }
 
   .timeline-content h4 {
@@ -494,17 +518,54 @@
 
 /* Mobile Small */
 @media (max-width: 360px) {
+  /* Timeline fixes for very narrow screens */
+  .timeline {
+    margin-left: var(
+      --spacing-2xl
+    ); /* Maximum margin for very narrow screens */
+    padding-left: var(--spacing-sm); /* Reduce padding */
+  }
+
+  .timeline-item {
+    padding-left: 30px; /* Reduce padding */
+  }
+
+  .timeline-item::before {
+    left: -40px; /* Move dates even closer */
+    font-size: 9px; /* Very small font */
+    min-width: 40px; /* Reduce minimum width */
+  }
+
+  .timeline-marker {
+    left: 3px; /* Adjust marker position */
+  }
+
+  .timeline::before {
+    left: 5px; /* Adjust timeline line position */
+  }
   .container {
     padding: 0 var(--spacing-xs);
   }
 
   .hero-title {
     font-size: var(--font-size-3xl);
+    margin-top: var(--spacing-sm); /* Additional spacing for small screens */
   }
 
   .image-container {
     width: 200px;
     height: 200px;
+    transform: none !important; /* Disable parallax on mobile */
+  }
+
+  .image-background {
+    transform: none !important; /* Disable parallax on mobile */
+  }
+
+  /* Ensure scroll indicator doesn't interfere on small screens */
+  .hero-scroll {
+    bottom: var(--spacing-md);
+    opacity: 0.8; /* Slightly reduce opacity */
   }
 
   .btn {
@@ -523,22 +584,41 @@
   .contact-form-container {
     padding: var(--spacing-sm);
   }
+
+  /* Additional timeline fixes for very small screens */
+  .timeline {
+    margin-left: var(
+      --spacing-xl
+    ); /* Even more margin for very small screens */
+  }
+
+  .timeline-item::before {
+    left: -50px; /* Move dates closer to prevent overflow */
+    font-size: 10px; /* Smaller font for very small screens */
+  }
 }
 
 /* Landscape Mobile */
 @media (max-height: 500px) and (orientation: landscape) {
   .hero {
     min-height: 100vh;
+    padding-top: 70px; /* Ensure navbar spacing in landscape */
   }
 
   .hero-content {
     min-height: 80vh;
     gap: var(--spacing-lg);
+    padding-top: var(--spacing-sm); /* Reduce padding in landscape */
   }
 
   .image-container {
     width: 200px;
     height: 200px;
+    transform: none !important; /* Disable parallax on mobile */
+  }
+
+  .image-background {
+    transform: none !important; /* Disable parallax on mobile */
   }
 
   .hero-title {

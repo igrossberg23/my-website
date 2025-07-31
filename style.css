@@ -321,6 +321,7 @@ a:hover {
   );
   position: relative;
   overflow: hidden;
+  padding-top: 70px; /* Account for fixed navbar */
 }
 
 .hero::before {
@@ -436,6 +437,7 @@ a:hover {
   left: 50%;
   transform: translateX(-50%);
   z-index: 2;
+  pointer-events: none; /* Prevent interference with content */
 }
 
 .scroll-indicator {
