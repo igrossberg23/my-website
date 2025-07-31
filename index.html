@@ -2,396 +2,617 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      http-equiv="X-UA-Compatible"
+      content="IE=edge" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="Isaac Grossberg - Full Stack Software Engineer. Experienced developer passionate about creating innovative web solutions." />
 
-    <link rel="icon" href="./img/favicon.png" type="image/png" />
-
-    <link rel="stylesheet" type="text/css" href="style.css" />
-    <link rel="stylesheet" type="text/css" href="queries.css" />
-    <script defer src="script.js"></script>
-    <script src="https://www.google.com/recaptcha/api.js" async defer></script>
-
-    <!-- Ion Icons-->
-    <script
-      type="module"
-      src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"
-    ></script>
-    <script
-      nomodule
-      src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"
-    ></script>
+    <link
+      rel="icon"
+      href="./img/favicon.png"
+      type="image/png" />
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="style.css" />
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="queries.css" />
 
     <!-- Google Fonts -->
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
-      href="https://fonts.googleapis.com/css2?family=Fredoka:wght@400;500;700&display=swap"
-      rel="stylesheet"
-    />
+      rel="preconnect"
+      href="https://fonts.googleapis.com" />
+    <link
+      rel="preconnect"
+      href="https://fonts.gstatic.com"
+      crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap"
+      rel="stylesheet" />
+
+    <!-- Ion Icons -->
+    <script
+      type="module"
+      src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+    <script
+      nomodule
+      src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+
+    <script
+      defer
+      src="script.js"></script>
+    <script
+      src="https://www.google.com/recaptcha/api.js"
+      async
+      defer></script>
 
     <title>Isaac Grossberg &mdash; Full Stack Software Engineer</title>
   </head>
   <body>
-    <noscript>
-      <style>
-        .page-container {
-          display: none;
-        }
-      </style>
-      <div class="no-js">
-        <h1>JavaScript is disabled</h1>
-        <p>
-          This website requires JavaScript to function properly. Please enable
-          JavaScript in your browser and reload the page.
-        </p>
+    <!-- Navigation -->
+    <nav class="navbar">
+      <div class="nav-container">
+        <div class="nav-logo">
+          <span class="logo-text">IG</span>
+        </div>
+        <ul class="nav-menu">
+          <li class="nav-item">
+            <a
+              href="#home"
+              class="nav-link"
+              >Home</a
+            >
+          </li>
+          <li class="nav-item">
+            <a
+              href="#about"
+              class="nav-link"
+              >About</a
+            >
+          </li>
+          <li class="nav-item">
+            <a
+              href="#projects"
+              class="nav-link"
+              >Projects</a
+            >
+          </li>
+          <li class="nav-item">
+            <a
+              href="#contact"
+              class="nav-link"
+              >Contact</a
+            >
+          </li>
+          <li class="nav-item">
+            <a
+              href="resume.html"
+              class="nav-link nav-resume"
+              >Resume</a
+            >
+          </li>
+        </ul>
+        <div class="hamburger">
+          <span class="bar"></span>
+          <span class="bar"></span>
+          <span class="bar"></span>
+        </div>
       </div>
-    </noscript>
-    <div id="cursor-blob"></div>
-    <div id="blur-layer"></div>
-    <div class="page-container">
-      <section class="section--hero">
-        <div class="hero--left">
-          <div class="header-block">
-            <img alt='logo' src="./img/logo.png" height="100px" >
-            <div class="header-text">
-              <h1 class="header-block--text">Isaac Grossberg</h1>
-              <p class="header-block--subtext">Full Stack Software Engineer</p>
-              <div class="about--links">
-                <a
-                  class="about--link"
-                  href="https://github.com/igrossberg23"
-                  target="_blank"
-                  ><ion-icon name="logo-github"></ion-icon
-                  ></a
-                >
-                <a
-                  class="about--link"
-                  href="https://www.linkedin.com/in/isaac-grossberg/"
-                  target="_blank"
-                  ><ion-icon name="logo-linkedin"></ion-icon
-                  ></a
-                >
-                <a class="about--link resume--link" href="resume.html"
-                  ><ion-icon name="document-outline"></ion-icon
-                  ></a
-                >
+    </nav>
+
+    <!-- Hero Section -->
+    <section
+      id="home"
+      class="hero">
+      <div class="hero-container">
+        <div class="hero-content">
+          <div class="hero-text">
+            <h1 class="hero-title">
+              Hi, I'm <span class="highlight">Isaac Grossberg</span>
+            </h1>
+            <p class="hero-subtitle">Full Stack Software Engineer</p>
+            <p class="hero-description">
+              Passionate about creating innovative web solutions and building
+              exceptional user experiences. Looking for opportunities to grow as
+              a developer and as a human.
+            </p>
+            <div class="hero-cta">
+              <a
+                href="#projects"
+                class="btn btn-primary"
+                >View My Work</a
+              >
+              <a
+                href="#contact"
+                class="btn btn-secondary"
+                >Get In Touch</a
+              >
+            </div>
+          </div>
+          <div class="hero-image">
+            <div class="image-container">
+              <img
+                src="./img/my-portrait.jpg"
+                alt="Isaac Grossberg"
+                class="profile-image" />
+              <div class="image-background"></div>
+            </div>
+          </div>
+        </div>
+        <div class="hero-scroll">
+          <div class="scroll-indicator">
+            <span>Scroll to explore</span>
+            <ion-icon name="chevron-down-outline"></ion-icon>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- About Section -->
+    <section
+      id="about"
+      class="about">
+      <div class="container">
+        <div class="section-header">
+          <h2 class="section-title">About Me</h2>
+          <p class="section-subtitle">
+            My journey in technology and development
+          </p>
+        </div>
+
+        <div class="about-content">
+          <div class="about-text">
+            <p class="about-intro">
+              I'm a Full Stack Software Engineer with a background in Electrical
+              & Computer Engineering. My journey from hardware to software has
+              given me a unique perspective on problem-solving and system
+              design.
+            </p>
+            <div class="skills">
+              <h3>Technologies I work with</h3>
+              <div class="skills-grid">
+                <div class="skill-category">
+                  <h4>Frontend</h4>
+                  <div class="skill-tags">
+                    <span class="skill-tag">React</span>
+                    <span class="skill-tag">JavaScript</span>
+                    <span class="skill-tag">HTML/CSS</span>
+                    <span class="skill-tag">TypeScript</span>
+                  </div>
+                </div>
+                <div class="skill-category">
+                  <h4>Backend</h4>
+                  <div class="skill-tags">
+                    <span class="skill-tag">Laravel</span>
+                    <span class="skill-tag">PHP</span>
+                    <span class="skill-tag">MySQL</span>
+                    <span class="skill-tag">Node.js</span>
+                  </div>
+                </div>
+                <div class="skill-category">
+                  <h4>Tools</h4>
+                  <div class="skill-tags">
+                    <span class="skill-tag">Docker</span>
+                    <span class="skill-tag">Git</span>
+                    <span class="skill-tag">AWS</span>
+                    <span class="skill-tag">Figma</span>
+                  </div>
+                </div>
               </div>
             </div>
-            <img class="header-portrait" alt='portrait' src="./img/my-portrait.jpg" height="200px" >
           </div>
-        </div>
-        <p class="hero--text">
-          Looking for opportunities to grow as a <span id="hero-span-1">developer</span> and as a <span id="hero-span-2">human</span>
-        </p>
-      </section>
-      <section class="section--about">
-        <h2 class="about--title section--header">About Me</h2>
-        <div id="about-grid" class="about--grid">
-          <div class="about--center-container">
-            <div class="about--timeline-graphic"></div>
-          </div>
-        </div>
-      </section>
-      <section class="section--projects">
-        <h2 class="section--header">Projects</h2>
 
-        <div class="project">
-          <div class="project--title">
-            <div class="project--name">
-              <ion-icon name="logo-javascript"></ion-icon>Forkify
+          <div class="timeline">
+            <div
+              class="timeline-item"
+              data-year="2016">
+              <div class="timeline-marker"></div>
+              <div class="timeline-content">
+                <h4>Graduated High School</h4>
+                <p>Sheldon High School, Eugene, OR</p>
+              </div>
             </div>
-            <div class="project--subname">Recipe Discovery</div>
+            <div
+              class="timeline-item"
+              data-year="2019">
+              <div class="timeline-marker"></div>
+              <div class="timeline-content">
+                <h4>Intern @ Intel</h4>
+                <p>Hardware failure analysis & web development</p>
+              </div>
+            </div>
+            <div
+              class="timeline-item"
+              data-year="2020">
+              <div class="timeline-marker"></div>
+              <div class="timeline-content">
+                <h4>OSU Graduate</h4>
+                <p>Electrical & Computer Engineering (3.95 GPA)</p>
+              </div>
+            </div>
+            <div
+              class="timeline-item"
+              data-year="2022">
+              <div class="timeline-marker"></div>
+              <div class="timeline-content">
+                <h4>Career Change</h4>
+                <p>Transitioned to web development</p>
+              </div>
+            </div>
+            <div
+              class="timeline-item"
+              data-year="2022">
+              <div class="timeline-marker"></div>
+              <div class="timeline-content">
+                <h4>Web Developer @ CSI</h4>
+                <p>React, Laravel, MySQL, Docker</p>
+              </div>
+            </div>
+            <div
+              class="timeline-item"
+              data-year="Present">
+              <div class="timeline-marker"></div>
+              <div class="timeline-content">
+                <h4>Looking Forward</h4>
+                <p>Seeking next growth opportunity</p>
+              </div>
+            </div>
           </div>
-          <div class="project--card-container">
-            <a
-              class="card project--card"
-              href="https://forkify-isaacg.netlify.app/"
-              target="_blank"
-            >
+        </div>
+      </div>
+    </section>
+
+    <!-- Projects Section -->
+    <section
+      id="projects"
+      class="projects">
+      <div class="container">
+        <div class="section-header">
+          <h2 class="section-title">Featured Projects</h2>
+          <p class="section-subtitle">
+            A showcase of my recent work and skills
+          </p>
+        </div>
+
+        <div class="projects-grid">
+          <article class="project-card featured">
+            <div class="project-image">
               <img
-                class="project--card-img"
                 src="./img/forkify-preview.png"
-                alt="Forkify Preview"
-              />
-            </a>
-            <div class="project--desc-container">
-              <ul class="project--desc">
-                <li>Course project</li>
-                <li>Focus on JavaScript</li>
-                <li>Utilizes MVC Architecture</li>
-                <li>Utlizes Parcel for bundling</li>
-                <li>Mix of OOP & Functional</li>
-                <li>Added functionality</li>
-              </ul>
+                alt="Forkify Recipe App" />
+              <div class="project-overlay">
+                <div class="project-links">
+                  <a
+                    href="https://forkify-isaacg.netlify.app/"
+                    target="_blank"
+                    class="project-link">
+                    <ion-icon name="open-outline"></ion-icon>
+                    Live Demo
+                  </a>
+                </div>
+              </div>
             </div>
-          </div>
-        </div>
+            <div class="project-content">
+              <div class="project-header">
+                <h3 class="project-title">Forkify</h3>
+                <span class="project-category">Recipe Discovery</span>
+              </div>
+              <p class="project-description">
+                A modern recipe discovery application built with JavaScript,
+                featuring MVC architecture, Parcel bundling, and a mix of OOP &
+                functional programming patterns.
+              </p>
+              <div class="project-tech">
+                <span class="tech-tag">JavaScript</span>
+                <span class="tech-tag">MVC</span>
+                <span class="tech-tag">Parcel</span>
+                <span class="tech-tag">OOP</span>
+              </div>
+            </div>
+          </article>
 
-        <div class="project">
-          <div class="project--title">
-            <div class="project--name">
-              <ion-icon name="logo-javascript"></ion-icon>Mapty
-            </div>
-            <div class="project--subname">Workout Tracking</div>
-          </div>
-          <div class="project--card-container">
-            <a
-              class="card project--card"
-              href="https://mapty-isaacg.netlify.app/"
-              target="_blank"
-            >
+          <article class="project-card">
+            <div class="project-image">
               <img
-                class="project--card-img"
                 src="./img/mapty-preview.png"
-                alt="Mapty Preview"
-              />
-            </a>
-            <div class="project--desc-container">
-              <ul class="project--desc">
-                <li>Course project</li>
-                <li>Focus on JavaScript</li>
-                <li>OOP</li>
-                <li>Utilizes Leaflet API</li>
-                <li>Added functionality</li>
-              </ul>
+                alt="Mapty Workout Tracker" />
+              <div class="project-overlay">
+                <div class="project-links">
+                  <a
+                    href="https://mapty-isaacg.netlify.app/"
+                    target="_blank"
+                    class="project-link">
+                    <ion-icon name="open-outline"></ion-icon>
+                    Live Demo
+                  </a>
+                </div>
+              </div>
             </div>
-          </div>
-        </div>
+            <div class="project-content">
+              <div class="project-header">
+                <h3 class="project-title">Mapty</h3>
+                <span class="project-category">Workout Tracking</span>
+              </div>
+              <p class="project-description">
+                A workout tracking application that uses the Leaflet API for
+                location-based workout logging with object-oriented programming
+                principles.
+              </p>
+              <div class="project-tech">
+                <span class="tech-tag">JavaScript</span>
+                <span class="tech-tag">OOP</span>
+                <span class="tech-tag">Leaflet API</span>
+              </div>
+            </div>
+          </article>
 
-        <div class="project">
-          <div class="project--title">
-            <div class="project--name">
-              <ion-icon name="logo-css3"></ion-icon>Omnifood
-            </div>
-            <div class="project--subname">Food Subscription</div>
-          </div>
-          <div class="project--card-container">
-            <a
-              class="card project--card"
-              href="https://omnifood-isaacg.netlify.app/"
-              target="_blank"
-            >
+          <article class="project-card">
+            <div class="project-image">
               <img
-                class="project--card-img"
                 src="./img/omnifood-preview.png"
-                alt="Omnifood Preview"
-              />
-            </a>
-            <div class="project--desc-container">
-              <ul class="project--desc">
-                <li>Course project</li>
-                <li>Focus on HTML/CSS</li>
-                <li>Responsive design</li>
-                <li>Single-Page Application</li>
-              </ul>
+                alt="Omnifood Food Subscription" />
+              <div class="project-overlay">
+                <div class="project-links">
+                  <a
+                    href="https://omnifood-isaacg.netlify.app/"
+                    target="_blank"
+                    class="project-link">
+                    <ion-icon name="open-outline"></ion-icon>
+                    Live Demo
+                  </a>
+                </div>
+              </div>
             </div>
-          </div>
-        </div>
+            <div class="project-content">
+              <div class="project-header">
+                <h3 class="project-title">Omnifood</h3>
+                <span class="project-category">Food Subscription</span>
+              </div>
+              <p class="project-description">
+                A responsive single-page application for a food subscription
+                service, showcasing modern HTML/CSS techniques and mobile-first
+                design.
+              </p>
+              <div class="project-tech">
+                <span class="tech-tag">HTML</span>
+                <span class="tech-tag">CSS</span>
+                <span class="tech-tag">Responsive</span>
+              </div>
+            </div>
+          </article>
 
-        <div class="project">
-          <div class="project--title">
-            <div class="project--name">
-              <ion-icon name="logo-javascript"></ion-icon>Bankist
-            </div>
-            <div class="project--subname">Minimalist Banking</div>
-          </div>
-          <div class="project--card-container">
-            <a
-              class="card project--card"
-              href="https://bankist-isaacg.netlify.app/"
-              target="_blank"
-            >
+          <article class="project-card">
+            <div class="project-image">
               <img
-                class="project--card-img"
                 src="./img/bankist-preview.png"
-                alt="Bankist Preview"
-              />
-            </a>
-            <div class="project--desc-container">
-              <ul class="project--desc">
-                <li>Course project</li>
-                <li>Focus on Javascript</li>
-                <li>Added functionality</li>
-              </ul>
+                alt="Bankist Banking App" />
+              <div class="project-overlay">
+                <div class="project-links">
+                  <a
+                    href="https://bankist-isaacg.netlify.app/"
+                    target="_blank"
+                    class="project-link">
+                    <ion-icon name="open-outline"></ion-icon>
+                    Live Demo
+                  </a>
+                </div>
+              </div>
             </div>
-          </div>
-        </div>
+            <div class="project-content">
+              <div class="project-header">
+                <h3 class="project-title">Bankist</h3>
+                <span class="project-category">Minimalist Banking</span>
+              </div>
+              <p class="project-description">
+                A minimalist banking interface demonstrating advanced JavaScript
+                concepts and smooth user interactions.
+              </p>
+              <div class="project-tech">
+                <span class="tech-tag">JavaScript</span>
+                <span class="tech-tag">DOM</span>
+                <span class="tech-tag">Animations</span>
+              </div>
+            </div>
+          </article>
 
-        <div class="project">
-          <div class="project--title">
-            <div class="project--name">
-              <ion-icon name="logo-javascript"></ion-icon>Pig Game
-            </div>
-            <div class="project--subname">2-Player Dice Game</div>
-          </div>
-          <div class="project--card-container">
-            <a
-              class="card project--card"
-              href="https://pig-game-isaacg.netlify.app/"
-              target="_blank"
-            >
+          <article class="project-card">
+            <div class="project-image">
               <img
-                class="project--card-img"
-                src="./img/pig-game-preview.png"
-                alt="Pig Game Preview"
-              />
-            </a>
-            <div class="project--desc-container">
-              <ul class="project--desc">
-                <li>Course project</li>
-                <li>Focus on JavaScript</li>
-                <li>HTML/CSS Provided</li>
-              </ul>
-            </div>
-          </div>
-        </div>
-
-        <div class="project">
-          <div class="project--title">
-            <div class="project--name">
-              <ion-icon name="logo-javascript"></ion-icon>Guess Game
-            </div>
-            <div class="project--subname">1-Player Game</div>
-          </div>
-          <div class="project--card-container">
-            <a
-              class="card project--card"
-              href="https://guessmynumber-isaacg.netlify.app/"
-              target="_blank"
-            >
-              <img
-                class="project--card-img"
-                src="./img/guessmynumber-preview.png"
-                alt="Guessing Game Preview"
-              />
-            </a>
-            <div class="project--desc-container">
-              <ul class="project--desc">
-                <li>Course project</li>
-                <li>Focus on JavaScript</li>
-                <li>HTML/CSS provided</li>
-              </ul>
-            </div>
-          </div>
-        </div>
-
-        <div class="project">
-          <div class="project--title">
-            <div class="project--name">
-              <ion-icon name="logo-css3"></ion-icon>Chair Shop
-            </div>
-            <div class="project--subname">Product Page</div>
-          </div>
-          <div class="project--card-container">
-            <a
-              class="card project--card"
-              href="https://chair-shop-isaacg.netlify.app/"
-              target="_blank"
-            >
-              <img
-                class="project--card-img"
-                src="./img/chair-shop-preview.png"
-                alt="Chair Shop Preview"
-              />
-            </a>
-            <div class="project--desc-container">
-              <ul class="project--desc">
-                <li>Course project</li>
-                <li>Focus on HTML/CSS</li>
-                <li>No JavaScript</li>
-              </ul>
-            </div>
-          </div>
-        </div>
-
-        <div class="project">
-          <div class="project--title">
-            <div class="project--name">
-              <ion-icon name="logo-css3"></ion-icon>Make A Splash
-            </div>
-            <div class="project--subname">Tropical Resort</div>
-          </div>
-          <div class="project--card-container">
-            <a
-              class="card project--card"
-              href="https://make-a-splash.netlify.app/"
-              target="_blank"
-            >
-              <img
-                class="project--card-img"
                 src="./img/make-a-splash-preview.png"
-                alt="Make A Splash Preview"
-              />
-            </a>
-            <div class="project--desc-container">
-              <ul class="project--desc">
-                <li>Independent Project</li>
-                <li>Focus on UI Design</li>
-                <li>HTML/CSS Based</li>
-                <li>Includes CSS animations</li>
-              </ul>
+                alt="Make A Splash Resort" />
+              <div class="project-overlay">
+                <div class="project-links">
+                  <a
+                    href="https://make-a-splash.netlify.app/"
+                    target="_blank"
+                    class="project-link">
+                    <ion-icon name="open-outline"></ion-icon>
+                    Live Demo
+                  </a>
+                </div>
+              </div>
             </div>
-          </div>
+            <div class="project-content">
+              <div class="project-header">
+                <h3 class="project-title">Make A Splash</h3>
+                <span class="project-category">Tropical Resort</span>
+              </div>
+              <p class="project-description">
+                An independent project showcasing UI design skills with CSS
+                animations and modern web design principles.
+              </p>
+              <div class="project-tech">
+                <span class="tech-tag">HTML</span>
+                <span class="tech-tag">CSS</span>
+                <span class="tech-tag">Animations</span>
+              </div>
+            </div>
+          </article>
         </div>
 
-        <div class="projects-disclaimer">
+        <div class="projects-note">
           <p>
-            Note that many of these projects were developed as part of an online
-            course. I am familiar with the code and have even added
+            <strong>Note:</strong> Many of these projects were developed as part
+            of an online course. I am familiar with the code and have added
             functionality, but these are not my original ideas. The course
             instructor has given permission for these to be used in a project
             portfolio.
           </p>
         </div>
-      </section>
-      <section class="section--contact">
-        <h2 class="section--header">Contact Me</h2>
-        <div class="contact--container">
-          <div class="contact--info">
-            <div class="contact--card">
-              <div class="contact--header">
-                <h3>Want to get in touch?</h3>
+      </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section
+      id="contact"
+      class="contact">
+      <div class="container">
+        <div class="section-header">
+          <h2 class="section-title">Get In Touch</h2>
+          <p class="section-subtitle">
+            Let's discuss your next project or opportunity
+          </p>
+        </div>
+
+        <div class="contact-content">
+          <div class="contact-info">
+            <div class="contact-card">
+              <div class="contact-icon">
+                <ion-icon name="mail-outline"></ion-icon>
               </div>
-              <div class="contact--form-container">
-                <form class="contact--form" name="feedback" method="POST" data-netlify-recaptcha="true" netlify>
-                    <input type="text" name="name" placeholder="Name" />
-                    <input type="email" name="email" placeholder="E-mail" />
-                    <textarea
-                      name="message-body"
-                      placeholder="Your message here"
-                    ></textarea>
-                    <div
-                      class="g-recaptcha"
-                      data-sitekey="6LcCCOMeAAAAAI3q-Vb5e8WMs5ZHFt7bfjYeLfzh"
-                    ></div>
-                    <button type="submit">Send</button>
-                </form>
+              <h3>Email</h3>
+              <p>igrossberg23@gmail.com</p>
+              <a
+                href="mailto:igrossberg23@gmail.com"
+                class="contact-link"
+                >Send Email</a
+              >
+            </div>
+
+            <div class="contact-card">
+              <div class="contact-icon">
+                <ion-icon name="logo-linkedin"></ion-icon>
               </div>
+              <h3>LinkedIn</h3>
+              <p>Connect with me professionally</p>
+              <a
+                href="https://www.linkedin.com/in/isaac-grossberg/"
+                target="_blank"
+                class="contact-link"
+                >View Profile</a
+              >
+            </div>
+
+            <div class="contact-card">
+              <div class="contact-icon">
+                <ion-icon name="logo-github"></ion-icon>
+              </div>
+              <h3>GitHub</h3>
+              <p>Check out my code</p>
+              <a
+                href="https://github.com/igrossberg23"
+                target="_blank"
+                class="contact-link"
+                >View Repos</a
+              >
             </div>
           </div>
-      </section>
-    </div>
-    <section class="section--footer">
-      <div class="copyright"></div>
-      <p class="version-notes">v1.0.2</p>
-      <div class="footer--links">
-        <div class="footer--link">
-          <a href="https://github.com/igrossberg23" target="_blank"
-            ><ion-icon name="logo-github"></ion-icon
-          ></a>
-        </div>
-        <div class="footer--link">
-          <a href="https://www.linkedin.com/in/isaac-grossberg/" target="_blank"
-            ><ion-icon name="logo-linkedin"></ion-icon
-          ></a>
-        </div>
-        <div class="footer--link">
-          <a href="mailto:igrossberg23@gmail.com" target="_blank"
-            ><ion-icon name="mail-open-outline"></ion-icon
-          ></a>
+
+          <div class="contact-form-container">
+            <form
+              class="contact-form"
+              name="feedback"
+              method="POST"
+              data-netlify-recaptcha="true"
+              netlify>
+              <div class="form-group">
+                <label for="name">Name</label>
+                <input
+                  type="text"
+                  id="name"
+                  name="name"
+                  required />
+              </div>
+
+              <div class="form-group">
+                <label for="email">Email</label>
+                <input
+                  type="email"
+                  id="email"
+                  name="email"
+                  required />
+              </div>
+
+              <div class="form-group">
+                <label for="message">Message</label>
+                <textarea
+                  id="message"
+                  name="message-body"
+                  rows="5"
+                  required></textarea>
+              </div>
+
+              <div
+                class="g-recaptcha"
+                data-sitekey="6LcCCOMeAAAAAI3q-Vb5e8WMs5ZHFt7bfjYeLfzh"></div>
+
+              <button
+                type="submit"
+                class="btn btn-primary">
+                Send Message
+              </button>
+            </form>
+          </div>
         </div>
       </div>
     </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+      <div class="container">
+        <div class="footer-content">
+          <div class="footer-info">
+            <p>
+              &copy; <span id="current-year"></span> Isaac Grossberg. All rights
+              reserved.
+            </p>
+          </div>
+          <div class="footer-links">
+            <a
+              href="https://github.com/igrossberg23"
+              target="_blank"
+              aria-label="GitHub">
+              <ion-icon name="logo-github"></ion-icon>
+            </a>
+            <a
+              href="https://www.linkedin.com/in/isaac-grossberg/"
+              target="_blank"
+              aria-label="LinkedIn">
+              <ion-icon name="logo-linkedin"></ion-icon>
+            </a>
+            <a
+              href="mailto:igrossberg23@gmail.com"
+              aria-label="Email">
+              <ion-icon name="mail-outline"></ion-icon>
+            </a>
+          </div>
+        </div>
+      </div>
+    </footer>
+
+    <!-- Scroll to top button -->
+    <button
+      class="scroll-top"
+      id="scrollTop"
+      aria-label="Scroll to top">
+      <ion-icon name="chevron-up-outline"></ion-icon>
+    </button>
   </body>
 </html>

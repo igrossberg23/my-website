@@ -1,206 +1,437 @@
-"use strict";
+'use strict';
 
-const copyrightEl = document.querySelector(".copyright");
-const linkResume = document.querySelector(".resume--link");
+// ===== DOM ELEMENTS =====
+const navbar = document.querySelector('.navbar');
+const hamburger = document.querySelector('.hamburger');
+const navMenu = document.querySelector('.nav-menu');
+const navLinks = document.querySelectorAll('.nav-link');
+const scrollTopBtn = document.getElementById('scrollTop');
+const currentYearSpan = document.getElementById('current-year');
 
-const aboutGrid = document.getElementById("about-grid");
-const aboutCenterContainer = document.querySelector(".about--center-container");
-
-const cursorBlob = document.getElementById('cursor-blob');
-
-const contactCard = this.document.querySelector(".contact--card");
-
-var touchDevice = ('ontouchstart' in window) || window.DocumentTouch && document instanceof DocumentTouch;
-
-const ABOUT_ME = [
-  {
-    icon: "home-outline",
-    title: "Graduated High School",
-    description: "Grew up in Eugene, OR. Graduated from Sheldon High School in 2016",
-    date: "Jun '16",
-  },
-  {
-    icon: "settings-outline",
-    title: "Engineering Intern",
-    description: "Worked under a senior engineer, aiding in schematic design and PLC programming",
-    date: "Jun '16",
-  },
-  {
-    icon: "hardware-chip-outline",
-    title: "Intern @ Intel",
-    description: "Worked on a variety of projects ranging from hardware failure analysis to web application development",
-    date: "Mar '19",
-  },
-  {
-    icon: "school-outline",
-    title: "OSU Grad",
-    description: "3.95 GPA in Electrical & Computer Engineering (minor in Computer Science)",
-    date: "Jun '20",
-  },
-  {
-    icon: "flash-outline",
-    title: "Intern @ SSOE",
-    description: "Learned power distribution engineering in construction projects for large tech companies",
-    date: "Jun '20",
-  },
-  {
-    icon: "battery-charging-outline",
-    title: "Electrical Engineer @ SSOE",
-    description: "Worked on a variety of projects doing 3D modeling, lighting calcs, and electrical design",
-    date: "Dec '20",
-  },
-  {
-    icon: "desktop-outline",
-    title: "Career Change - Web Dev",
-    description: "Independently learned HTML, CSS, JavaScript, and React",
-    date: "Jan '22",
-  },
-  {
-    icon: "code-slash-outline",
-    title: "Web Developer @ CSI",
-    description: "Worked on two web applications using technologies like React, Laravel, MySQL, and Docker",
-    date: "May '22",
-  },
-  {
-    icon: "paper-plane-outline",
-    title: "Onward & Upward",
-    description: "Looking for that next opportunity for growth and development",
-    date: "Present",
-  }
-]
-
-const WINDOW_MIN_WIDTH = 600;
-
-function generateCopyright() {
-  const date = new Date();
-  const year = date.getFullYear();
-
-  const copyrightMessage = `\&copy; ${year} by Isaac Grossberg. All rights reserved.`;
-  copyrightEl.innerHTML = copyrightMessage;
+// ===== UTILITY FUNCTIONS =====
+function debounce(func, wait) {
+  let timeout;
+  return function executedFunction(...args) {
+    const later = () => {
+      clearTimeout(timeout);
+      func(...args);
+    };
+    clearTimeout(timeout);
+    timeout = setTimeout(later, wait);
+  };
 }
-generateCopyright();
 
-// Window load
-window.addEventListener("load", function () {
-  // Adjust resume link for mobile view
-  linkResume.addEventListener("click", function (e) {
-    if (window.innerWidth < WINDOW_MIN_WIDTH) {
-      e.preventDefault();
-      window.location.href = "./docs/GrossbergResume_03-23.pdf";
+function throttle(func, limit) {
+  let inThrottle;
+  return function () {
+    const args = arguments;
+    const context = this;
+    if (!inThrottle) {
+      func.apply(context, args);
+      inThrottle = true;
+      setTimeout(() => (inThrottle = false), limit);
     }
+  };
+}
+
+// ===== NAVIGATION =====
+function initNavigation() {
+  // Mobile menu toggle
+  hamburger.addEventListener('click', () => {
+    hamburger.classList.toggle('active');
+    navMenu.classList.toggle('active');
   });
 
-  buildAboutMe(); // Mostly for style points, considering making these static again though
+  // Close mobile menu when clicking on a link
+  navLinks.forEach((link) => {
+    link.addEventListener('click', () => {
+      hamburger.classList.remove('active');
+      navMenu.classList.remove('active');
+    });
+  });
 
-  setupCursorBlob();
-//   setupContactCard();
-  setupAboutCards();
+  // Smooth scrolling for navigation links
+  navLinks.forEach((link) => {
+    link.addEventListener('click', (e) => {
+      const href = link.getAttribute('href');
 
-});
+      // Skip if it's an external link or resume link
+      if (href.startsWith('http') || href === 'resume.html') {
+        return;
+      }
 
-function setupCursorBlob() {
-  if (!touchDevice) {
-    document.body.onpointermove = (e) => {
-      const { pageX, pageY } = e;
+      e.preventDefault();
+      const targetSection = document.querySelector(href);
+      if (targetSection) {
+        const offsetTop = targetSection.offsetTop - 70; // Account for fixed navbar
+        window.scrollTo({
+          top: offsetTop,
+          behavior: 'smooth',
+        });
+      }
+    });
+  });
+}
 
-      cursorBlob.animate({
-        left: `${pageX}px`,
-        top: `${pageY}px`,
-      }, { duration: 1000, fill: "forwards"});
+// ===== SCROLL EFFECTS =====
+function initScrollEffects() {
+  // Navbar background on scroll
+  const handleScroll = throttle(() => {
+    if (window.scrollY > 50) {
+      navbar.style.backgroundColor = 'rgba(255, 255, 255, 0.98)';
+      navbar.style.boxShadow = '0 2px 20px rgba(0, 0, 0, 0.1)';
+    } else {
+      navbar.style.backgroundColor = 'rgba(255, 255, 255, 0.95)';
+      navbar.style.boxShadow = 'none';
     }
-  } else {
-    cursorBlob.style.display = "none";
+  }, 100);
+
+  window.addEventListener('scroll', handleScroll);
+
+  // Scroll to top button
+  const handleScrollTop = throttle(() => {
+    if (window.scrollY > 500) {
+      scrollTopBtn.classList.add('visible');
+    } else {
+      scrollTopBtn.classList.remove('visible');
+    }
+  }, 100);
+
+  window.addEventListener('scroll', handleScrollTop);
+
+  // Scroll to top functionality
+  scrollTopBtn.addEventListener('click', () => {
+    window.scrollTo({
+      top: 0,
+      behavior: 'smooth',
+    });
+  });
+}
+
+// ===== INTERSECTION OBSERVER ANIMATIONS =====
+function initScrollAnimations() {
+  const observerOptions = {
+    threshold: 0.1,
+    rootMargin: '0px 0px -50px 0px',
+  };
+
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach((entry) => {
+      if (entry.isIntersecting) {
+        entry.target.style.opacity = '1';
+        entry.target.style.transform = 'translateY(0)';
+      }
+    });
+  }, observerOptions);
+
+  // Observe elements for animation
+  const animateElements = document.querySelectorAll(
+    '.project-card, .contact-card, .skill-tag, .timeline-item'
+  );
+
+  animateElements.forEach((el) => {
+    el.style.opacity = '0';
+    el.style.transform = 'translateY(30px)';
+    el.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
+    observer.observe(el);
+  });
+}
+
+// ===== PROJECT CARDS INTERACTIONS =====
+function initProjectInteractions() {
+  const projectCards = document.querySelectorAll('.project-card');
+
+  projectCards.forEach((card) => {
+    const image = card.querySelector('.project-image img');
+    const overlay = card.querySelector('.project-overlay');
+
+    if (image && overlay) {
+      card.addEventListener('mouseenter', () => {
+        image.style.transform = 'scale(1.05)';
+        overlay.style.opacity = '1';
+      });
+
+      card.addEventListener('mouseleave', () => {
+        image.style.transform = 'scale(1)';
+        overlay.style.opacity = '0';
+      });
+    }
+  });
+}
+
+// ===== FORM VALIDATION =====
+function initFormValidation() {
+  const contactForm = document.querySelector('.contact-form');
+
+  if (contactForm) {
+    contactForm.addEventListener('submit', (e) => {
+      const name = contactForm.querySelector('#name').value.trim();
+      const email = contactForm.querySelector('#email').value.trim();
+      const message = contactForm.querySelector('#message').value.trim();
+
+      if (!name || !email || !message) {
+        e.preventDefault();
+        alert('Please fill in all fields');
+        return;
+      }
+
+      // Basic email validation
+      const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+      if (!emailRegex.test(email)) {
+        e.preventDefault();
+        alert('Please enter a valid email address');
+        return;
+      }
+    });
   }
 }
 
-function setupContactCard() {
-  if (!touchDevice) {
-    const contactObserver = new IntersectionObserver((entries, observer) => {
-      entries.forEach(entry => {
+// ===== SKILL TAGS INTERACTIONS =====
+function initSkillInteractions() {
+  const skillTags = document.querySelectorAll('.skill-tag');
+
+  skillTags.forEach((tag) => {
+    tag.addEventListener('mouseenter', () => {
+      tag.style.transform = 'translateY(-4px) scale(1.05)';
+    });
+
+    tag.addEventListener('mouseleave', () => {
+      tag.style.transform = 'translateY(0) scale(1)';
+    });
+  });
+}
+
+// ===== TIMELINE ANIMATIONS =====
+function initTimelineAnimations() {
+  const timelineItems = document.querySelectorAll('.timeline-item');
+
+  const timelineObserver = new IntersectionObserver(
+    (entries) => {
+      entries.forEach((entry) => {
         if (entry.isIntersecting) {
-          contactCard.animate({transform: "translateX(-100)", opacity: "1"}, { duration: 1500, fill: "forwards" })
+          const marker = entry.target.querySelector('.timeline-marker');
+          if (marker) {
+            marker.style.animation = 'pulse 1s ease-in-out';
+          }
         }
       });
-    }, {
-      threshold: 0.8
+    },
+    { threshold: 0.5 }
+  );
+
+  timelineItems.forEach((item) => {
+    timelineObserver.observe(item);
+  });
+}
+
+// ===== TYPING ANIMATION =====
+function initTypingAnimation() {
+  const heroTitle = document.querySelector('.hero-title');
+  if (!heroTitle) return;
+
+  const text = heroTitle.textContent;
+  heroTitle.textContent = '';
+
+  let i = 0;
+  const typeWriter = () => {
+    if (i < text.length) {
+      heroTitle.textContent += text.charAt(i);
+      i++;
+      setTimeout(typeWriter, 100);
+    }
+  };
+
+  // Start typing animation after a short delay
+  setTimeout(typeWriter, 500);
+}
+
+// ===== PARALLAX EFFECTS =====
+function initParallaxEffects() {
+  const parallaxElements = document.querySelectorAll(
+    '.hero-image, .image-background'
+  );
+
+  const handleParallax = throttle(() => {
+    const scrolled = window.pageYOffset;
+    const rate = scrolled * -0.5;
+
+    parallaxElements.forEach((element) => {
+      element.style.transform = `translateY(${rate}px)`;
     });
-    contactObserver.observe(contactCard);
+  }, 16);
 
-    return contactObserver;
-  } else {
-    contactCard.style.opacity = "1";
+  window.addEventListener('scroll', handleParallax);
+}
+
+// ===== UTILITY FUNCTIONS =====
+function updateCopyright() {
+  const currentYear = new Date().getFullYear();
+  if (currentYearSpan) {
+    currentYearSpan.textContent = currentYear;
   }
-
-  return false;
 }
 
-function setupAboutCards() {
-  const aboutBoxes = document.querySelectorAll(".about--box");
+function addCSSAnimations() {
+  // Add pulse animation for timeline markers
+  const style = document.createElement('style');
+  style.textContent = `
+    @keyframes pulse {
+      0% { transform: scale(1); }
+      50% { transform: scale(1.2); }
+      100% { transform: scale(1); }
+    }
+    
+    @keyframes fadeInUp {
+      from {
+        opacity: 0;
+        transform: translateY(30px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+    
+    @keyframes slideInLeft {
+      from {
+        opacity: 0;
+        transform: translateX(-50px);
+      }
+      to {
+        opacity: 1;
+        transform: translateX(0);
+      }
+    }
+    
+    @keyframes slideInRight {
+      from {
+        opacity: 0;
+        transform: translateX(50px);
+      }
+      to {
+        opacity: 1;
+        transform: translateX(0);
+      }
+    }
+  `;
+  document.head.appendChild(style);
+}
 
-  var aboutObserver = new IntersectionObserver((entries, observer) => {
-    entries.forEach(entry => {
-      entry.target.classList.toggle("show", entry.isIntersecting);
-    })
-  }, {
-    threshold: 0.7,
+// ===== PERFORMANCE OPTIMIZATIONS =====
+function initPerformanceOptimizations() {
+  // Lazy load images
+  const images = document.querySelectorAll('img[data-src]');
+  const imageObserver = new IntersectionObserver((entries) => {
+    entries.forEach((entry) => {
+      if (entry.isIntersecting) {
+        const img = entry.target;
+        img.src = img.dataset.src;
+        img.classList.remove('lazy');
+        imageObserver.unobserve(img);
+      }
+    });
   });
 
-  aboutBoxes.forEach((box) => aboutObserver.observe(box));
-
-  return aboutObserver;
+  images.forEach((img) => imageObserver.observe(img));
 }
 
-function buildAboutMe() {
-  // Build out each section
-  ABOUT_ME.forEach((section, idx) => {
+// ===== ACCESSIBILITY IMPROVEMENTS =====
+function initAccessibility() {
+  // Add keyboard navigation for mobile menu
+  hamburger.addEventListener('keydown', (e) => {
+    if (e.key === 'Enter' || e.key === ' ') {
+      e.preventDefault();
+      hamburger.click();
+    }
+  });
 
-    /** Build side elements **/
-    const aboutBox = document.createElement("div");
-    aboutBox.className = "about--box";
+  // Add focus management for mobile menu
+  navLinks.forEach((link) => {
+    link.addEventListener('keydown', (e) => {
+      if (e.key === 'Escape') {
+        hamburger.classList.remove('active');
+        navMenu.classList.remove('active');
+        hamburger.focus();
+      }
+    });
+  });
 
-    const aboutIcon = document.createElement("ion-icon");
-    aboutIcon.className = "about--icon";
-    aboutIcon.name = section.icon;
+  // Add ARIA labels and roles
+  scrollTopBtn.setAttribute('aria-label', 'Scroll to top of page');
+  hamburger.setAttribute('aria-label', 'Toggle navigation menu');
+  hamburger.setAttribute('aria-expanded', 'false');
 
-    const aboutText = document.createElement("div");
-    aboutText.className = "about--text";
-
-    const aboutTextMain = document.createElement("h3");
-    aboutTextMain.className = "about--text-main";
-    aboutTextMain.innerHTML = section.title;
-
-    const aboutTextSub = document.createElement("p");
-    aboutTextSub.className = "about--text-sub";
-    aboutTextSub.innerHTML = section.description;
-
-    const mobileDate = document.createElement("p");
-    mobileDate.innerText = section.date;
-    mobileDate.className = "mobile-date";
-
-    /** Combine side elements **/
-    aboutBox.appendChild(aboutIcon);
-    aboutBox.appendChild(aboutText);
-    aboutText.appendChild(mobileDate);
-    aboutText.appendChild(aboutTextMain);
-    aboutText.appendChild(aboutTextSub);
-
-    /** Build timeline elements **/
-    const aboutTimelineText = document.createElement("div");
-    aboutTimelineText.className = "about--timeline-text";
-
-    const aboutTimelineTextP = document.createElement("p");
-    aboutTimelineTextP.innerText = section.date;
-
-    const aboutTimelineTextDiv = document.createElement("div");
-
-    /** Combine timeline elements **/
-    aboutTimelineText.appendChild(aboutTimelineTextP);
-    aboutTimelineText.appendChild(aboutTimelineTextDiv);
-
-    /** Add everything to the DOM **/
-    aboutGrid.appendChild(aboutBox);
-    aboutCenterContainer.appendChild(aboutTimelineText);
-
+  hamburger.addEventListener('click', () => {
+    const isExpanded = hamburger.getAttribute('aria-expanded') === 'true';
+    hamburger.setAttribute('aria-expanded', !isExpanded);
   });
 }
 
+// ===== INITIALIZATION =====
+function init() {
+  // Add CSS animations
+  addCSSAnimations();
+
+  // Initialize all functionality
+  initNavigation();
+  initScrollEffects();
+  initScrollAnimations();
+  initProjectInteractions();
+  initFormValidation();
+  initSkillInteractions();
+  initTimelineAnimations();
+  initParallaxEffects();
+  initPerformanceOptimizations();
+  initAccessibility();
+
+  // Update copyright year
+  updateCopyright();
+
+  // Initialize typing animation after page load
+  window.addEventListener('load', () => {
+    setTimeout(initTypingAnimation, 1000);
+  });
+}
+
+// ===== EVENT LISTENERS =====
+document.addEventListener('DOMContentLoaded', init);
+
+// Handle window resize
+window.addEventListener(
+  'resize',
+  debounce(() => {
+    // Close mobile menu on resize
+    if (window.innerWidth > 768) {
+      hamburger.classList.remove('active');
+      navMenu.classList.remove('active');
+    }
+  }, 250)
+);
+
+// Handle page visibility changes
+document.addEventListener('visibilitychange', () => {
+  if (document.hidden) {
+    // Pause animations when page is not visible
+    document.body.style.setProperty('--transition-normal', '0ms');
+  } else {
+    // Resume animations when page becomes visible
+    document.body.style.setProperty('--transition-normal', '250ms ease-in-out');
+  }
+});
+
+// ===== ERROR HANDLING =====
+window.addEventListener('error', (e) => {
+  console.error('JavaScript error:', e.error);
+});
+
+// ===== EXPORT FOR TESTING =====
+if (typeof module !== 'undefined' && module.exports) {
+  module.exports = {
+    init,
+    initNavigation,
+    initScrollEffects,
+    initScrollAnimations,
+    debounce,
+    throttle,
+  };
+}

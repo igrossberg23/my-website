@@ -2,25 +2,264 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" type="text/css" href="resume.css" />
+    <meta
+      http-equiv="X-UA-Compatible"
+      content="IE=edge" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="Isaac Grossberg - Resume. Full Stack Software Engineer with experience in React, Laravel, and modern web technologies." />
+
+    <link
+      rel="icon"
+      href="./img/favicon.png"
+      type="image/png" />
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="style.css?v=2" />
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="queries.css?v=2" />
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="resume.css?v=2" />
+
+    <!-- Google Fonts -->
+    <link
+      rel="preconnect"
+      href="https://fonts.googleapis.com" />
+    <link
+      rel="preconnect"
+      href="https://fonts.gstatic.com"
+      crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap"
+      rel="stylesheet" />
+
+    <!-- Ion Icons -->
+    <script
+      type="module"
+      src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+    <script
+      nomodule
+      src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+
+    <script
+      defer
+      src="script.js"></script>
+
     <title>Isaac Grossberg &mdash; Resume</title>
   </head>
   <body>
-    <div class="container">
-      <h1 class="header-text">Resume.render()</h1>
-      <h2 class="header-text header-secondary">{</h2>
-      <div class="frame-container">
-        <iframe
-          src="./docs/GrossbergResume_03-25.pdf"
-          width="1000px"
-          height="1000px"
-          class="resume-view"
-        ></iframe>
+    <!-- Navigation -->
+    <nav class="navbar">
+      <div class="nav-container">
+        <div class="nav-logo">
+          <a
+            href="index.html"
+            class="logo-text"
+            >IG</a
+          >
+        </div>
+        <ul class="nav-menu">
+          <li class="nav-item">
+            <a
+              href="index.html#home"
+              class="nav-link"
+              >Home</a
+            >
+          </li>
+          <li class="nav-item">
+            <a
+              href="index.html#about"
+              class="nav-link"
+              >About</a
+            >
+          </li>
+          <li class="nav-item">
+            <a
+              href="index.html#projects"
+              class="nav-link"
+              >Projects</a
+            >
+          </li>
+          <li class="nav-item">
+            <a
+              href="index.html#contact"
+              class="nav-link"
+              >Contact</a
+            >
+          </li>
+          <li class="nav-item">
+            <a
+              href="resume.html"
+              class="nav-link nav-resume active"
+              >Resume</a
+            >
+          </li>
+        </ul>
+        <div class="hamburger">
+          <span class="bar"></span>
+          <span class="bar"></span>
+          <span class="bar"></span>
+        </div>
       </div>
-      <h2 class="header-text">}</h2>
-      <a class="return-link" href="index.html">Bring me back!</a>
-    </div>
+    </nav>
+
+    <!-- Resume Header -->
+    <section class="resume-header">
+      <div class="container">
+        <div class="resume-header-content">
+          <div class="resume-header-text">
+            <h1 class="resume-title">Resume</h1>
+            <p class="resume-subtitle">
+              Isaac Grossberg - Full Stack Software Engineer
+            </p>
+            <div class="resume-actions">
+              <a
+                href="./docs/GrossbergResume_03-25.pdf"
+                target="_blank"
+                class="btn btn-primary">
+                <ion-icon name="download-outline"></ion-icon>
+                Download PDF
+              </a>
+              <a
+                href="index.html"
+                class="btn btn-secondary">
+                <ion-icon name="arrow-back-outline"></ion-icon>
+                Back to Portfolio
+              </a>
+            </div>
+          </div>
+          <div class="resume-header-icon">
+            <div class="icon-container">
+              <ion-icon name="document-text-outline"></ion-icon>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Resume Content -->
+    <section class="resume-content">
+      <div class="container">
+        <div class="resume-container">
+          <div class="resume-frame-wrapper">
+            <iframe
+              src="./docs/GrossbergResume_03-25.pdf"
+              class="resume-frame"
+              title="Isaac Grossberg Resume"></iframe>
+          </div>
+
+          <div class="resume-info">
+            <div class="resume-info-card">
+              <h3>Quick Info</h3>
+              <ul class="resume-info-list">
+                <li>
+                  <ion-icon name="mail-outline"></ion-icon>
+                  <span>igrossberg23@gmail.com</span>
+                </li>
+                <li>
+                  <ion-icon name="logo-linkedin"></ion-icon>
+                  <a
+                    href="https://www.linkedin.com/in/isaac-grossberg/"
+                    target="_blank"
+                    >LinkedIn Profile</a
+                  >
+                </li>
+                <li>
+                  <ion-icon name="logo-github"></ion-icon>
+                  <a
+                    href="https://github.com/igrossberg23"
+                    target="_blank"
+                    >GitHub Profile</a
+                  >
+                </li>
+                <li>
+                  <ion-icon name="location-outline"></ion-icon>
+                  <span>Eugene, OR</span>
+                </li>
+              </ul>
+            </div>
+
+            <div class="resume-info-card">
+              <h3>Key Skills</h3>
+              <div class="skills-summary">
+                <div class="skill-category">
+                  <h4>Frontend</h4>
+                  <div class="skill-tags">
+                    <span class="skill-tag">React</span>
+                    <span class="skill-tag">JavaScript</span>
+                    <span class="skill-tag">HTML/CSS</span>
+                  </div>
+                </div>
+                <div class="skill-category">
+                  <h4>Backend</h4>
+                  <div class="skill-tags">
+                    <span class="skill-tag">Laravel</span>
+                    <span class="skill-tag">PHP</span>
+                    <span class="skill-tag">MySQL</span>
+                  </div>
+                </div>
+                <div class="skill-category">
+                  <h4>Tools</h4>
+                  <div class="skill-tags">
+                    <span class="skill-tag">Docker</span>
+                    <span class="skill-tag">Git</span>
+                    <span class="skill-tag">AWS</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+      <div class="container">
+        <div class="footer-content">
+          <div class="footer-info">
+            <p>
+              &copy; <span id="current-year"></span> Isaac Grossberg. All rights
+              reserved.
+            </p>
+          </div>
+          <div class="footer-links">
+            <a
+              href="https://github.com/igrossberg23"
+              target="_blank"
+              aria-label="GitHub">
+              <ion-icon name="logo-github"></ion-icon>
+            </a>
+            <a
+              href="https://www.linkedin.com/in/isaac-grossberg/"
+              target="_blank"
+              aria-label="LinkedIn">
+              <ion-icon name="logo-linkedin"></ion-icon>
+            </a>
+            <a
+              href="mailto:igrossberg23@gmail.com"
+              aria-label="Email">
+              <ion-icon name="mail-outline"></ion-icon>
+            </a>
+          </div>
+        </div>
+      </div>
+    </footer>
+
+    <!-- Scroll to top button -->
+    <button
+      class="scroll-top"
+      id="scrollTop"
+      aria-label="Scroll to top">
+      <ion-icon name="chevron-up-outline"></ion-icon>
+    </button>
   </body>
 </html>
